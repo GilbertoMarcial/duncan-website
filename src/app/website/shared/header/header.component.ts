@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, HostListener, AfterViewInit, ViewChild } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -13,12 +13,15 @@ export class HeaderComponent {
   @ViewChild('navbarMain') navbarMain!: ElementRef;
   @ViewChild('contactForm') contactFormSection!: ElementRef;
 
-  constructor() { }
+  constructor(
+    private _router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   @HostListener('window:scroll', [])
+  // Función que permite cambiar el color del navbar
   onWindowScroll() {
     const scrolled = window.scrollY > 50;
     const navbarEl = this.navbarMain.nativeElement;
@@ -32,6 +35,7 @@ export class HeaderComponent {
     }
   }
 
+  // Función que permite desplazarse a la sección de contacto
   scrollToContact() {
     const element = document.getElementById('contactForm');
     if (element) {
@@ -43,5 +47,10 @@ export class HeaderComponent {
       window.scrollTo({ top: y, behavior: 'smooth' });
       
     }
+  }
+
+  // 
+  isBrandsActive(): boolean {
+    return this._router.url.startsWith('/brands');
   }
 }

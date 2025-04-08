@@ -26,7 +26,7 @@
 
           <!-- Productos -->
           <li class="nav-item dropdown dropdown-hover">
-            <a class="nav-link text-primary-uai dropdownMenuBlocks" id="dropdownMenuProductos" data-bs-toggle="dropdown" aria-expanded="false" href="javascript:;">
+            <a class="nav-link text-primary-uai dropdownMenuBlocks" id="dropdownMenuProductos" data-bs-toggle="dropdown" aria-expanded="false" href="javascript:;" [ngClass]="{ 'nav-link-active': isBrandsActive() }">
               Productos
               <img src="/assets/icons/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1">
             </a>
@@ -35,7 +35,7 @@
                 
                 <!-- Todos -->
                 <li class="nav-item">
-                  <a href="pages/products.html" class="dropdown-item py-2 ps-3 border-radius-sm">
+                  <a href="javascript:;" [routerLink]="['/brands']" [routerLinkActive]="['active']" class="dropdown-item py-2 ps-3 border-radius-sm">
                     <div class="d-flex">
                       <div class="icon h-10 me-3 d-flex mt-1">
                         <img src="/assets/icons/icon-product.svg" alt="icono">
@@ -54,7 +54,7 @@
 
                 <!-- Doble Engineering Company -->
                 <li class="nav-item">
-                  <a href="pages/doble.html" class="dropdown-item py-2 ps-3 border-radius-sm">
+                  <a href="javascript:;" [routerLink]="['/brands', 'doble']" [routerLinkActive]="['active']" class="dropdown-item py-2 ps-3 border-radius-sm">
                     <div class="d-flex">
                       <div class="icon h-10 me-3 d-flex mt-1">
                         <img src="/assets/images/brands/logo_doble_small.svg" alt="icono">
@@ -73,7 +73,7 @@
 
                 <!-- Beckwith Electric -->
                 <li class="nav-item">
-                  <a href="javascript:;" class="dropdown-item py-2 ps-3 border-radius-sm">
+                  <a href="javascript:;" [routerLink]="['/brands', 'beckwith']" class="dropdown-item py-2 ps-3 border-radius-sm">
                     <div class="d-flex">
                       <div class="icon h-10 me-3 d-flex mt-1">
                         <img src="/assets/images/brands/logo_beckwith_small.svg" alt="icono">
@@ -92,7 +92,7 @@
 
                 <!-- Vanguard Instruments -->
                 <li class="nav-item">
-                  <a href="javascript:;" class="dropdown-item py-2 ps-3 border-radius-sm">
+                  <a href="javascript:;" [routerLink]="['/brands', 'vanguard']" class="dropdown-item py-2 ps-3 border-radius-sm">
                     <div class="d-flex">
                       <div class="icon h-10 me-3 d-flex mt-1">
                         <img src="/assets/images/brands/logo_vanguard_small.svg" alt="icono">
@@ -111,7 +111,7 @@
 
                 <!-- Manitoba -->
                 <li class="nav-item">
-                  <a href="javascript:;" class="dropdown-item py-2 ps-3 border-radius-sm">
+                  <a href="javascript:;" [routerLink]="['/brands', 'pscad']" class="dropdown-item py-2 ps-3 border-radius-sm">
                     <div class="d-flex">
                       <div class="icon h-10 me-3 d-flex mt-1">
                         <img src="/assets/images/brands/logo_pscad_02_small.svg" alt="PSCAD">

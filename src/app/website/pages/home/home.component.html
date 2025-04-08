@@ -1,1 +1,299 @@
-<p>home works!</p>
+<!-- Begin main page -->
+<div class="page-header min-vh-100">
+  <span class="mask bg-gradient-images-01-uai"></span>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <h1 class="text-white display-1">Duncan Engineering Company</h1>
+        <p class="text-white py-3">High Performance Transformation</p>
+        <a href="javascript:;" (click)="scrollToContact()" type="button" class="btn btn-lg btn-outline-primary">
+          Contáctanos
+        </a>
+        <br>
+        <div class="scroll-down-container">
+          <a href="javascript:;" (click)="scrollToProducts()" type="button" class="scroll-down-button">
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End main page -->
+
+<!-- Begin logo brands -->
+<section class="py-5" id="products" name="products">
+  <div class="container">
+
+    <!-- Encabezado -->
+    <div class="row">
+      <div class="col-8 mx-auto text-center mb-5">
+        <h2 class="text-primary-uai">
+          Productos
+        </h2>
+        <p class="text-dark-uai">
+          Soluciones de ingeniería para la industria.
+        </p>
+      </div>
+    </div>
+
+    <!-- Tira de marcas -->
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-2 col-md-2 col-sm-2">
+        <a href="https://www.hubbell.com/beckwithelectric/en/" target="_blank">
+          <img class="w-100 opacity-10" src="assets/images/brands/logo_beckwith_small.svg" alt="Beckwith" width="64" height="64">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2">
+        <a href="https://www.doble.com/" target="_blank">
+          <img class="w-100 opacity-10" src="assets/images/brands/logo_doble_small.svg" alt="Doble" width="64" height="64">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2">
+        <a href="https://www.pscad.com/" target="_blank">
+        <img class="w-100 opacity-10" src="assets/images/brands/logo_pscad_small.svg" alt="PSCAD" width="64" height="64">
+      </a>
+    </div>
+      <div class="col-lg-2 col-md-2 col-sm-2">
+        <a href="https://www.doble.com/about/vanguard-instruments/" target="_blank">
+          <img class="w-100 opacity-10" src="assets/images/brands/logo_vanguard_small.svg" alt="Vanguard" width="64" height="64">
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End logo brands -->
+
+<!-- Begin productos -->
+<section class="pb-3">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        
+        <!-- Carousel -->
+        <div id="carouselProducts" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner pb-5">
+            <div class="carousel-item active">
+              <div class="container-fluid px-3">
+
+                <div class="row">
+                  <!-- Begin productos -->
+                  <div class="col-lg-4 mb-lg-0 mb-4 mt-4" *ngFor="let product of products">
+                    <div class="card card-hover">
+                      <div class="card-header p-0 position-relative z-index-1">
+                        <a href="javascript:;" class="d-block">
+                          <img src="assets/images/products/{{ product.key }}.png" alt="{{ product.name }}" class="img-fluid border-radius-sm">
+                        </a>
+                      </div>
+          
+                      <div class="card-body pt-3">
+                        <a href="javascript:;" class="card-title h5 d-block text-secondary-uai">
+                          {{ product.name }}
+                        </a>
+                        <p class="card-description mb-4 text-dark-uai">
+                          {{ product.subname }}
+                        </p>
+                        <div class="align-items-center">
+                          <div class="col-md-12 text-center">
+                            <a href="javascript:;" [routerLink]="['/products', product.key]" class="btn btn-primary mt-4">
+                              Ver equipo
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End product -->
+          
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row pb-5">
+      <div class="col-lg-12">
+        <div class="align-items-center">
+          <div class="col-md-12 text-center">
+            <a href="javascript:;" [routerLink]="['/products']" class="btn btn-lg btn-primary mt-4">
+              Ver todos los equipos
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End productos -->
+
+<!-- Begin cursos -->
+<section class="page-header py-7" style="background-image: url('assets/images/bg1.svg')">
+  <span class="mask bg-gradient-sections-0-uai"></span>
+  <div class="container">
+    <div class="row">
+      <div class="col-8 mx-auto text-center mb-5">
+        <h2 class="text-primary-uai">
+          Cursos
+        </h2>
+        <p class="text-dark-uai">
+          Todos nuestros ingenieros tienen grado de maestría y certificaciones en sistemas de potencia, 
+          diagnóstivo y pruebas a equipos primarios, pruebas a relevadores y administración de proyectos.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <div class="row mt-3">
+          <div class="col-sm-6 col-lg-6 mt-lg-0 mt-4">
+            <img class="w-15 mb-3" src="assets/icons/transformer-power-voltage-energy-electronic-svgrepo-com.svg">
+            <h5 class="text-secondary-uai">Protecciones</h5>
+            <p class="text-sm text-dark-uai">
+              Diplomado Protecciones Eléctricas de Sistemas de Distribución.
+            </p>
+          </div>
+
+          <div class="col-sm-6 col-lg-6 mt-lg-0 mt-4">
+            <img class="w-15 mb-3" src="assets/icons/electric-tower01.svg">
+            <h5 class="text-secondary-uai">Subestaciones</h5>
+            <p class="text-sm text-dark-uai">
+              Diplomado en Diagnóstico y Pruebas a Equipo Primario de Subestación.
+            </p>
+          </div>
+
+          <div class="col-sm-6 col-lg-6 mt-lg-0 mt-4">
+            <img class="w-15 mb-3" src="assets/icons/sound01.svg">
+            <h5 class="text-secondary-uai">Subestaciones</h5>
+            <p class="text-sm text-dark-uai">
+              Diplomado en Diagnóstico y Pruebas a Equipo Primario de Subestación.
+            </p>
+          </div>
+
+          <div class="col-sm-6 col-lg-6 mt-lg-0 mt-4">
+            <img class="w-15 mb-3" src="assets/icons/technology-digital-transformation-machinery-engineering-industry-svgrepo-com.svg">
+            <h5 class="text-secondary-uai">Protecciones</h5>
+            <p class="text-sm text-dark-uai">
+              Diplomado Protecciones Eléctricas de Sistemas de Distribución.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End cursos -->
+
+<!-- Begin contacto -->
+<section class="page-header" id="contactForm" name="contactForm" #contactForm>
+  <img src="assets/images/mass-circles.svg" alt="pattern-lines" class="position-absolute opacity-6">
+  <span class="mask bg-gradient-hero-uai opacity-4"></span>
+
+  <!-- contenido -->
+  <div class="container py-5">
+
+    <div class="row align-items-center">
+      <div class="col-lg-8 mx-auto text-center">
+        <div>
+          <h2 class="text-primary-uai">Contáctanos</h2>
+          <p class="text-dark-uai">
+            ¿Necesita más información?
+            <br>
+            Déjenos sus datos y un miembro de nuestro equipo se pondrá en contacto usted.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <div class="row align-items-center pt-4">
+          
+
+          <!-- imagen -->
+          <div class="col-lg-5">
+            <div class="card mb-lg-5">
+              <img class="card-img" src="assets/images/call-center.jpg" alt="contacto">
+            </div>
+          </div>
+
+          <div class="col-lg-1"></div>
+
+          <!-- Formulario -->
+          <div class="col-lg-6 mt-2">
+            <div class="card mb-lg-5">
+              <div class="card-body">
+                <form id="contact-form" method="post" autocomplete="off">
+                  
+                    <div class="row">
+                      <div class="col-md-12">
+                        <label>Nombre completo</label>
+                        <div class="input-group mb-4">
+                          <input class="form-control" placeholder="Ingrese su nombre" aria-label="Full Name" type="text">
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <label>Teléfono</label>
+                        <div class="input-group mb-4">
+                          <input class="form-control" placeholder="Ingrese su teléfono" aria-label="Full Name" type="text">
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <label>Correo</label>
+                        <div class="input-group">
+                          <input type="email" class="form-control" placeholder="Ingrese su correo">
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="form-group mb-4 mt-md-0 mt-4">
+                      <label>Mensaje</label>
+                      <textarea name="message" class="form-control" id="message" rows="6" placeholder="Opcional"></textarea>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12 text-center">
+                        <button type="submit" class="btn btn-primary mt-3">
+                          Solicitar informes
+                        </button>
+                      </div>
+                    </div>
+                  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- wave down -->
+  <div class="position-absolute w-100 bottom-0">
+    <svg width="100%" viewBox="0 -1 1920 166" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <title>wave-up</title>
+      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(0.000000, 5.000000)" fill="#FFFFFF" fill-rule="nonzero">
+          <g id="wave-up" transform="translate(0.000000, -5.000000)">
+            <path d="M0,70 C298.666667,105.333333 618.666667,95 960,39 C1301.33333,-17 1621.33333,-11.3333333 1920,56 L1920,165 L0,165 L0,70 Z"></path>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+</section>
+<!-- End contacto -->

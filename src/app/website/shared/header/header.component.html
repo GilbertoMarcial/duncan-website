@@ -1,10 +1,10 @@
 <!-- Begin header -->
 <header class="position-relative">
   <!-- Begin Navbar -->
-  <nav class="fixed-top navbar navbar-expand-lg bg-white" id="navbar-main">
+  <nav class="fixed-top navbar navbar-expand-lg bg-white transition-all duration-300" id="navbar-main" #navbarMain>
     <div class="container">
       <!-- logo -->
-      <a class="navbar-brand text-white" href="javascript:;">
+      <a class="navbar-brand text-white" href="javascript:;" [routerLink]="['/']">
         <img src="/assets/images/duncan-logo.png" alt="Logo Duncan" width="64" height="64">
       </a>
 
@@ -19,7 +19,7 @@
       <div class="collapse navbar-collapse" id="navbar-header-2">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link nav-link-active text-primary-uai" href="javascript:;">
+            <a class="nav-link text-primary-uai" href="javascript:;" [routerLink]="['/home']" [routerLinkActive]="['nav-link-active']">
               Inicio
             </a>
           </li>
@@ -129,13 +129,10 @@
               </div>
             </ul>
           </li>
-          <li class="nav-item" style="display: none;">
-            <a class="nav-link text-dark-uai" href="#contactForm">
-              Cursos
-            </a>
-          </li>
+
+          <!-- Contacto -->
           <li class="nav-item">
-            <a class="nav-link text-dark-uai" href="#contactForm">
+            <a class="nav-link text-dark-uai" href="javascript:;" (click)="scrollToContact()">
               Contacto
             </a>
           </li>

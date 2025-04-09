@@ -1,0 +1,91 @@
+<!-- Beging Main -->
+<div class="page-header min-vh-75" style="background-image: url('https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg');">
+  <span class="mask bg-gradient-images-02-uai"></span>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="text-white display-4">
+          {{ brand.name }}
+        </h2>
+        <br>
+        <div class="scroll-down-container">
+          <a href="javascript:;" (click)="scrollToAbout()" type="button" class="scroll-down-button">
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Main -->
+
+<!-- Begin about -->
+<section class="page-header min-vh25" id="acerca" name="acerca">
+  <div class="container">
+    <div class="row align-items-center my-5">
+      <div class="col-lg-8 col-12 mx-auto text-center">
+        <div>
+          <h2 class="text-primary-uai">Acerca de</h2>
+          <div [innerHTML]="brand.about"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End about -->
+
+<!-- Begin líneas v02-->
+<section class="pb-3">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <div class="row">
+
+          <div class="container-card">
+            <ng-container *ngFor="let line of brand.lines; let i = index;">
+              <div class="card-v2">
+                <div class="card-image-v2" style="background-image: url('../assets/images/lines/{{ line.key }}.png');" *ngIf="i % 2 === 0"></div>
+                <div class="card-content-v2">
+                  <div class="px-5 py-5">
+                    <h2 class="text-secondary-uai">{{ line.name }}</h2>
+                    <p class="text-dark-uai">{{ line.description }}</p>
+                    <a href="javascript:;" [routerLink]="[line.key]" type="button" class="btn btn-primary btn-sm">
+                      Ver productos
+                    </a>
+                  </div>
+                </div>
+                <div class="card-image-v2" style="background-image: url('../assets/images/lines/{{ line.key }}.png');" *ngIf="i % 2 !== 0"></div>
+              </div>
+            </ng-container>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End líneas -->
+
+<!-- Begin más info -->
+<section class="page-header py-5">
+  <span class="mask bg-gradient-hero-uai opacity-4"></span>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-12 mx-auto text-center mt-1">
+        <div>
+          <h2 class="text-secondary-uai">¿Necesita más información?</h2>
+          <a href="javascript:;" type="button" class="btn btn-lg btn-primary mt-4">
+            De clic aquí
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End más info -->

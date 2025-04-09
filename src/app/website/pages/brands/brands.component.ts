@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -8,6 +8,11 @@ import { RouterModule } from '@angular/router';
   templateUrl: './brands.component.html',
   styleUrl: './brands.component.css'
 })
-export class BrandsComponent {
+export class BrandsComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
 }

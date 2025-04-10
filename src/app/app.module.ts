@@ -6,8 +6,9 @@ import { LOCALE_ID, NgModule } from "@angular/core";
 
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
-import { APP_ROUTES } from "./app.routes";
+import { APP_ROUTES, routes } from "./app.routes";
 import { WebsiteModule } from "./website/website.module";
+import { RouterModule } from "@angular/router";
 
 registerLocaleData(localEs, 'es');
 
@@ -16,6 +17,11 @@ registerLocaleData(localEs, 'es');
   imports: [
     BrowserModule, 
     FormsModule, 
+
+    RouterModule.forRoot(routes, {
+      anchorScrolling: 'enabled',
+      scrollOffset: [0, 100]
+    }),
     
     APP_ROUTES, 
     

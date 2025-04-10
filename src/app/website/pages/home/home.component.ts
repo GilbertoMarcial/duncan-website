@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 // Services
 
@@ -19,6 +19,10 @@ export class HomeComponent implements OnInit {
 
   products: Product[] = [];
 
+  constructor(
+    private _route: ActivatedRoute
+  ) {}
+
   ngOnInit(): void {
     // Se cargan los tres productos a mostrar en el home
     this.products = [
@@ -26,6 +30,16 @@ export class HomeComponent implements OnInit {
       new Product(2, 'm7100', 'M7100', 'Analizador de activos de alto voltaje', 'doble', 'transformadores'),
       new Product(3, 'f8300', 'F8300', 'Equipo de prueba trifásico', 'doble', 'interruptores')
     ];
+  }
+
+  ngAfterViewInit(): void {
+    this._route.fragment.subscribe(fragment => {
+      if (fragment) {
+        setTimeout(() => {
+          this.scrollToContact();
+        }, 100); // espera a que se renderice el DOM
+      }
+    });
   }
 
   // Función que permite desplazarse a la sección de productos

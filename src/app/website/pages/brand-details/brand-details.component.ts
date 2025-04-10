@@ -1,13 +1,18 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+
+import { MoreInfoComponent } from '../../shared/more-info/more-info.component';
+
+// Models
 import { Brand } from '../../models/brand';
 import { Line } from '../../models/line';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-brand-details',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, MoreInfoComponent],
   templateUrl: './brand-details.component.html',
   styleUrl: './brand-details.component.css'
 })
@@ -44,10 +49,13 @@ export class BrandDetailsComponent implements OnInit {
         new Line(2, 'pruebas', 'Pruebas de protección', 'Realice pruebas, gestione datos y genere informes con el software y los equipos de diagnóstico para pruebas de todos los tipos de esquemas y relés de protección.')
       ]
     );
+
+    // Sanitizamos el texto en html
     this.setAboutSafe(this.brand.about);
     return this.brand;
   }
 
+  // Función que limpia el texto en html
   setAboutSafe(html: string) {
     this.aboutSafe = this._sanitizer.bypassSecurityTrustHtml(html);
     this.brand.about = this.aboutSafe;

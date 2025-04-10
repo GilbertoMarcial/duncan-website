@@ -22,9 +22,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     // Se cargan los tres productos a mostrar en el home
     this.products = [
-      new Product(1, 'm4100', 'M4100', 'Analizador de aparatos de alto voltaje', '', '', '', '', ''),
-      new Product(2, 'm7100', 'M7100', 'Analizador de activos de alto voltaje', '', '', '', '', ''),
-      new Product(3, 'f8300', 'F8300', 'Equipo de prueba trifásico', '', '', '', '', '')
+      new Product(1, 'm4100', 'M4100', 'Analizador de aparatos de alto voltaje'),
+      new Product(2, 'm7100', 'M7100', 'Analizador de activos de alto voltaje'),
+      new Product(3, 'f8300', 'F8300', 'Equipo de prueba trifásico')
     ];
   }
 

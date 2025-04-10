@@ -5,6 +5,7 @@ import { WebsiteComponent } from "./website.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { BrandsComponent } from "./pages/brands/brands.component";
 import { BrandDetailsComponent } from "./pages/brand-details/brand-details.component";
+import { LineDetailsComponent } from "./pages/line-details/line-details.component";
 
 const websiteRoutes: Routes = [
   {
@@ -15,6 +16,7 @@ const websiteRoutes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' }, 
       { path: 'brands', component: BrandsComponent },
       { path: 'brands/:key', component: BrandDetailsComponent },
+      { path: 'brands/:key/:line', component: LineDetailsComponent },
     ]
   }
 ];

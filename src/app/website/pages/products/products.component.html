@@ -1,0 +1,157 @@
+<!-- Beging Main two columns -->
+<div class="page-header min-vh-60 my-1">
+  <span class="mask bg-gradient-primary-uai"></span>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <div class="row">
+
+          <div class="col-lg-6 col-12 my-auto pt-4">
+            <h2 class="text-white display-6 text-end">
+              {{ product.name }}
+            </h2>
+            <p class="lead text-white text-end">
+              {{ product.subname }}
+            </p>
+          </div>
+          
+          <div class="col-lg-6 col-12 my-auto pt-7" style="display: flex !important; justify-content: center !important; align-items: center !important;">
+            <img class="img-fluid position-relative image-fit" src="../assets/images/products/{{ product.key }}.png" alt="{{ product.name }}">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Main -->
+
+<!-- Begin Descripción general -->
+<section class="page-header min-vh-40 py-3">
+  <div class="container">
+    <div class="row my-3">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <div>
+          <h3 class="text-primary-uai">
+            Descripción.
+          </h3>
+          <div [innerHTML]="product.description"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Descripción general -->
+
+<!-- Begin Características -->
+<section class="page-header py-3" *ngIf="product.features !== ''">
+  <span class="mask bg-gradient-primary-uai opacity-1"></span>
+  <div class="container">
+    <div class="row my-3">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <h3 class="text-secondary-uai">
+          Características clave
+        </h3>
+
+        <div [innerHTML]="product.features"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Características -->
+
+<!-- Begin Beneficios -->
+<section class="page-header py-3" *ngIf="product.benefits !== ''">
+  <div class="container">
+    <div class="row my-3">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <h3 class="text-primary-uai">
+          Beneficios
+        </h3>
+
+        <div [innerHTML]="product.benefits"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Beneficios -->
+
+<!-- Begin Accesorios -->
+<section class="page-header py-3" *ngIf="product.accesories !== ''">
+  <span class="mask bg-gradient-images-05-uai opacity-2"></span>
+  <div class="container">
+    <div class="row my-3">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <h3 class="text-secondary-uai">
+          Accesorios
+        </h3>
+
+        <div [innerHTML]="product.accesories"></div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Accesorios -->
+
+<!-- Begin Productos relacionados -->
+<section class="page-header" *ngIf="product.related.length > 0">
+  <div class="container">
+    <div class="row my-3">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <h3 class="text-primary-uai mt-5">
+          Productos relacionados
+        </h3>
+      </div>
+    </div>
+
+    <div class="row mb-7">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <div class="row">
+          <!-- Begin productos -->
+          <ng-container *ngFor="let relatedProduct of product.related">
+            <div class="col-lg-4 mb-lg-0 mb-4 mt-4">
+              <div class="card card-hover">
+                <div class="card-header p-0 position-relative z-index-1">
+                  <a href="javascript:;" class="d-block">
+                    <img src="../assets/images/products/{{ relatedProduct.key }}.png" alt="{{ relatedProduct.name }}" class="img-fluid border-radius-sm">
+                  </a>
+                </div>
+
+                <div class="card-body pt-3">
+                  <a href="javascript:;" class="card-title h5 d-block text-secondary-uai">
+                    {{ relatedProduct.name }}
+                  </a>
+                  <p class="card-description mb-4 text-dark-uai">
+                    {{ relatedProduct.subname }}
+                  </p>
+                  <div class="align-items-center">
+                    <div class="col-md-12 text-center">
+                      <a href="javascript:;" [routerLink]="['/products', relatedProduct.key]" class="btn btn-primary mt-4">
+                        Ver equipo
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <!-- End productos -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Productos relacionados -->
+
+<!-- Begin más info -->
+<app-more-info></app-more-info>
+<!-- End más info -->

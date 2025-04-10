@@ -28,7 +28,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this._route.params.subscribe(params => {
-      this.keyProduct = params['key'];
+      this.keyProduct = params['product'];
       this.loadProduct(this.keyProduct);
     });
   }
@@ -46,9 +46,9 @@ export class ProductsComponent implements OnInit {
       '<ul class="text-dark-uai"><li class="mt-2">La seguridad es nuestra prioridad con interruptores de seguridad, luces estroboscópicas de potencia e interbloqueos de relé de conexión a tierra.</li><li class="mt-2">Elimina el efecto de la variación de la interferencia electrostática con la modulación de la frecuencia de la línea patentada, que hace mediciones a una frecuencia por encima y por debajo de la frecuencia del sistema.</li><li class="mt-2">Confiabilidad y precisión: Genera su propia señal de prueba limpia mediante el uso de un generador de forma de onda interna para resultados confiables y lecturas estables.</li><li class="mt-2">El sistema de firmware del software detecta un funcionamiento anormal de la corriente, la temperatura y el voltaje incluso antes de que el usuario lo note.</li><li class="mt-2">Analice instantáneamente los resultados de pruebas y proporcione recomendaciones y explicaciones claras con el sistema FRANK™, First Response Analytics Knowledgebase (por sus siglas en inglés).</li></ul>', 
       '<ul class="text-dark-uai"><li class="mt-2">Laptop Dell de uso rudo</li><li class="mt-2">M4110 Leakage Reactance Interface</li><li class="mt-2">M4140 Capacitor Bank Test Kit</li><li class="mt-2">M4151 Field Calibration Reference</li><li class="mt-2">Type C Resonating Inductor</li><li class="mt-2">M4300 Transport</li><li class="mt-2">Doble Test Assistant (DTA) Software</li><li class="mt-2">dobleTTR Capacitor</li><li class="mt-2">M4100 Transport</li></ul>', 
       [
-        new Product(1, 'm4100', 'M4100', 'Probador de aparatos de alto voltaje'),
-        new Product(2, 'm7100', 'M7100', 'Analizador de activos de alto voltaje'),
-        new Product(3, 'dta', 'Software DTA', 'Software Doble Test Assistant')
+        new Product(1, 'm4100', 'M4100', 'Probador de aparatos de alto voltaje', 'doble', 'transformadores'),
+        new Product(2, 'm7100', 'M7100', 'Analizador de activos de alto voltaje', 'doble', 'transformadores'),
+        new Product(3, 'dta', 'Software DTA', 'Software Doble Test Assistant', 'doble', 'transformadores')
       ]
     );
 

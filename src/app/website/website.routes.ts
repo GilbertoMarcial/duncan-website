@@ -18,7 +18,7 @@ const websiteRoutes: Routes = [
       { path: 'brands', component: BrandsComponent },
       { path: 'brands/:key', component: BrandDetailsComponent },
       { path: 'brands/:key/:line', component: LineDetailsComponent },
-      { path: 'products/:key', component: ProductsComponent }
+      { path: 'brands/:key/:line/:product', component: ProductsComponent }
     ]
   }
 ];

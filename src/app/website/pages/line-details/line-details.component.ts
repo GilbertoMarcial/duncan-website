@@ -45,14 +45,14 @@ export class LineDetailsComponent implements OnInit {
       [
         new Category(1, 'interruptores', 'Prueba de interruptores', 
           [
-            new Product(1, 'f8300', 'F8300', 'Equipo de prueba trifásico')
+            new Product(1, 'f8300', 'F8300', 'Equipo de prueba trifásico', 'doble', 'interruptores')
           ]
         ), 
         new Category(2, 'transformadores', 'Prueba de transformadores de potencia', 
           [
-            new Product(2, 'm7100', 'M7100', 'Analizador de activos de alto voltaje'),
-            new Product(3, 'm4100', 'M4100', 'Probador de aparatos de alto voltaje'),
-            new Product(4, 'dta', 'Software DTA', 'Software Doble Test Assistant')
+            new Product(2, 'm7100', 'M7100', 'Analizador de activos de alto voltaje', 'doble', 'transformadores'),
+            new Product(3, 'm4100', 'M4100', 'Probador de aparatos de alto voltaje', 'doble', 'transformadores'),
+            new Product(4, 'dta', 'Software DTA', 'Software Doble Test Assistant', 'doble', 'transformadores')
           ]
         )
       ]

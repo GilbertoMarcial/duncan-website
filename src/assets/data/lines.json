@@ -1,0 +1,337 @@
+[
+  {
+    "id": 1,
+    "key": "instrumentos-de-prueba-electricos-doble",
+    "name": "Instrumentos de prueba eléctricos",
+    "description": "<p class='text-dark-uai pt-3'>Evalúe el estado de transformadores, interruptores, máquinas rotativas y dispositivos auxiliares de la subestación.</p><p class='text-dark-uai pt-3'>Los sólidos equipos de diagnóstico de <span class='font-weight-bold'>Doble</span> y su software correspondiente le permiten realizar pruebas de rutina y especializadas en sus activos críticos. En realidad, las “Pruebas Doble” son el estándar de la industria. Clientes en todo el mundo usan los equipos serie <span class='font-weight-bold'>M</span>, <span class='font-weight-bold'>TDR</span>, <span class='font-weight-bold'>SFRA</span> y <span class='font-weight-bold'>Vanguard</span> para realizar pruebas de puesta en servicio, diagnóstico y mantenimiento programado. Estos analizadores de activos son la piedra angular de un riguroso programa de mantenimiento basado en las condiciones.</p>",
+    "categories": [
+      {
+        "id": 1, 
+        "key": "prueba-de-interruptores",
+        "name": "Prueba de interruptores",
+        "products": [
+          {
+            "id": 1, 
+            "key": "tdr9100",
+            "name": "TDR9100",
+            "subname": "Sistema de prueba de interruptores",
+            "brand": "doble",
+            "line": "instrumentos-de-prueba-electricos"
+          }
+        ]
+      },
+      {
+        "id": 2, 
+        "key": "prueba-de-transformadores-de-potencia",
+        "name": "Prueba de transformadores de potencia",
+        "products": [
+          {
+            "id": 2, 
+            "key": "m7100",
+            "name": "M7100",
+            "subname": "Analizador de activos de alto voltaje",
+            "brand": "doble",
+            "line": "instrumentos-de-prueba-electricos"
+          },
+          {
+            "id": 3, 
+            "key": "m4100",
+            "name": "M4100",
+            "subname": "Probador de aparatos de alto voltaje",
+            "brand": "doble",
+            "line": "instrumentos-de-prueba-electricos"
+          },
+          {
+            "id": 4, 
+            "key": "software-dta",
+            "name": "Software DTA",
+            "subname": "Software Doble Test Assistant",
+            "brand": "doble",
+            "line": "instrumentos-de-prueba-electricos"
+          },
+          {
+            "id": 5, 
+            "key": "m5500",
+            "name": "M5500",
+            "subname": "Analizador de respuesta al barrido de la frecuencia",
+            "brand": "doble",
+            "line": "instrumentos-de-prueba-electricos"
+          },
+          {
+            "id": 6, 
+            "key": "software-sfra",
+            "name": "Software SFRA v6",
+            "subname": "Software analizador de respuesta al barrido de la frecuencia",
+            "brand": "doble",
+            "line": "instrumentos-de-prueba-electricos"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "key": "pruebas-de-proteccion-doble",
+    "name": "Pruebas de protección",
+    "description": "<p class='text-dark-uai pt-3'>Garantice el rendimiento del sistema de protección mediante las soluciones de pruebas, gestión de datos y generación de informes de cumplimiento.</p><p class='text-dark-uai pt-3'><span class='font-weight-bold'>Doble</span> ofrece una completa línea de soluciones de software y equipos de diagnóstico para la verificación de la protección del sistema. Sus soluciones le permiten desafiar cualquier circuito de control y protección y simular la condición del sistema. El software es flexible y nuestros equipos son modulares, lo que le permite personalizar su programa de pruebas, respetar los procedimientos y prácticas de su empresa y, al mismo tiempo, cumplir los requisitos normativos.</p>",
+    "categories": [
+      {
+        "id": 3, 
+        "key": "secundario-multifasico",
+        "name": "Secundario/Multifásico",
+        "products": [
+          {
+            "id": 7, 
+            "key": "f8300",
+            "name": "F8300",
+            "subname": "Equipo de prueba trifásico",
+            "brand": "doble",
+            "line": "pruebas-de-proteccion"
+          },
+          {
+            "id": 8, 
+            "key": "f6150sv",
+            "name": "F6150SV",
+            "subname": "Simulador de sistemas de potencia",
+            "brand": "doble",
+            "line": "pruebas-de-proteccion"
+          },
+          {
+            "id": 8, 
+            "key": "mts-5100",
+            "name": "MTS-5100",
+            "subname": "Sistema de pruebas de relés de protección",
+            "brand": "doble",
+            "line": "pruebas-de-proteccion"
+          }
+        ]
+      },
+      {
+        "id": 4, 
+        "key": "software",
+        "name": "Software",
+        "products": [
+          {
+            "id": 9, 
+            "key": "software-protection-suite",
+            "name": "Protection Suite",
+            "subname": "Software para pruebas de protección para simuladores de potencia de Doble",
+            "brand": "doble",
+            "line": "pruebas-de-proteccion"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "key": "reles-de-proteccion",
+    "name": "Relés de protección",
+    "description": "<p class='text-dark-uai pt-3'>Garantice el rendimiento del sistema de protección mediante las soluciones de pruebas, gestión de datos y generación de informes de cumplimiento.</p>",
+    "categories": [
+      {
+        "id": 5, 
+        "key": "proteccion-del-generador",
+        "name": "Protección del generador",
+        "products": [
+          {
+            "id": 10, 
+            "key": "m-3425a",
+            "name": "M-3425A",
+            "subname": "Relé Integral de Protección para Generadores",
+            "brand": "beckwith",
+            "line": "reles-de-proteccion"
+          }
+        ]
+      },
+      {
+        "id": 6, 
+        "key": "proteccion-para-interconexion",
+        "name": "Protección para Interconexión de Generación Distribuida y Recursos de Energía Distribuida (DG-DER)",
+        "products": [
+          {
+            "id": 11, 
+            "key": "m-3410a",
+            "name": "M-3410A",
+            "subname": "Relé de Protección para Interconexiones/Generadores",
+            "brand": "beckwith",
+            "line": "reles-de-proteccion"
+          },
+          {
+            "id": 12, 
+            "key": "m-3520",
+            "name": "M-3520",
+            "subname": "Sistema de Protección Integrado",
+            "brand": "beckwith",
+            "line": "reles-de-proteccion"
+          }
+        ]
+      },
+      {
+        "id": 7, 
+        "key": "proteccion-del-transformador",
+        "name": "Protección del transformador",
+        "products": [
+          {
+            "id": 13, 
+            "key": "m-3311a",
+            "name": "M-3311A",
+            "subname": "Relé de Protección para Transformadores (2, 3 o 4 Devanados)",
+            "brand": "beckwith",
+            "line": "reles-de-proteccion"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "key": "industrial",
+    "name": "Industrial",
+    "description": "<p class='text-dark-uai pt-3'>Los equipos de protección y control industrial sirven para proteger maquinaria, motores y otros dispositivos de fallas eléctricas, optimizando la eficiencia y seguridad de los procesos industriales.</p><p class='text-dark-uai pt-3'><span class='font-weight-bold'>Beckwith Electric</span> ofrece la tecnología de control de próxima generación más inteligente para transformadores LTC, reguladores de voltaje y bancos de capacitores para aplicaciones de redes inteligentes.</p>",
+    "categories": [
+      {
+        "id": 8, 
+        "key": "motor-del-bus",
+        "name": "Motor del bus de transferencia",
+        "products": [
+          {
+            "id": 14, 
+            "key": "m-4272",
+            "name": "M-4272",
+            "subname": "Sistema Digital para el Motor de Bus de Transferencia",
+            "brand": "beckwith",
+            "line": "industrial"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "key": "instrumentos-de-prueba-electricos-vanguard",
+    "name": "Instrumentos de prueba eléctricos",
+    "description": "<p class='text-dark-uai pt-3'>Evalúe el estado de transformadores, interruptores, máquinas rotativas y dispositivos auxiliares de la subestación.</p><p class='text-dark-uai pt-3'>Los sólidos equipos de diagnóstico de <span class='font-weight-bold'>Doble</span> y su software correspondiente le permiten realizar pruebas de rutina y especializadas en sus activos críticos. En realidad, las “Pruebas Doble” son el estándar de la industria. Clientes en todo el mundo usan los equipos serie <span class='font-weight-bold'>M</span>, <span class='font-weight-bold'>TDR</span>, <span class='font-weight-bold'>SFRA</span> y <span class='font-weight-bold'>Vanguard</span> para realizar pruebas de puesta en servicio, diagnóstico y mantenimiento programado. Estos analizadores de activos son la piedra angular de un riguroso programa de mantenimiento basado en las condiciones.</p>",
+    "categories": [
+      {
+        "id": 9, 
+        "key": "micro-ohmmeter",
+        "name": "Micro-Ohmmeter",
+        "products": [
+          {
+            "id": 15, 
+            "key": "auto-ohm-200-s4",
+            "name": "AUTO-OHM 200 S4",
+            "subname": "200 Un verdadero microóhmetro de corriente continua",
+            "brand": "vanguard",
+            "line": "instrumentos-de-prueba-electricos-vanguard"
+          }
+        ]
+      },
+      {
+        "id": 10, 
+        "key": "prueba-de-interruptores-vanguard",
+        "name": "Prueba de interruptores",
+        "products": [
+          {
+            "id": 16, 
+            "key": "ct-8000-s3",
+            "name": "CT-8000 S3",
+            "subname": "Analizador digital de interruptores",
+            "brand": "vanguard",
+            "line": "instrumentos-de-prueba-electricos-vanguard"
+          },
+          {
+            "id": 17, 
+            "key": "digitmr-s2",
+            "name": "DigiTMR S2",
+            "subname": "Analizador de interruptores para alta tensión (EHV)",
+            "brand": "vanguard",
+            "line": "instrumentos-de-prueba-electricos-vanguard"
+          }
+        ]
+      },
+      {
+        "id": 11, 
+        "key": "prueba-de-transformadores-de-potencia-vanguard",
+        "name": "Prueba de transformadores de potencia",
+        "products": [
+          {
+            "id": 18, 
+            "key": "atrt-01b-s3",
+            "name": "ATRT-01B S3",
+            "subname": "Probadores automáticos de relación de vueltas para transformadores monofásicos",
+            "brand": "vanguard",
+            "line": "instrumentos-de-prueba-electricos-vanguard"
+          },
+          {
+            "id": 19, 
+            "key": "atrt-03-s2",
+            "name": "ATRT-03 S2",
+            "subname": "Probador automático de relación de vueltas para transformadores trifásicos",
+            "brand": "vanguard",
+            "line": "instrumentos-de-prueba-electricos-vanguard"
+          },
+          {
+            "id": 20, 
+            "key": "trf-250-a",
+            "name": "TRF-250 A",
+            "subname": "Medidor de relación automático a batería del transformador trifásico",
+            "brand": "vanguard",
+            "line": "instrumentos-de-prueba-electricos-vanguard"
+          },
+          {
+            "id": 21, 
+            "key": "trm-20",
+            "name": "TRM-20",
+            "subname": "Lectura rápida y estable para transformadores muy grandes",
+            "brand": "vanguard",
+            "line": "instrumentos-de-prueba-electricos-vanguard"
+          },
+          {
+            "id": 22, 
+            "key": "trm-203",
+            "name": "TRM-203",
+            "subname": "Medidor de resistencia de devanados trifásico de 25 A con desmagnetización",
+            "brand": "vanguard",
+            "line": "instrumentos-de-prueba-electricos-vanguard"
+          },
+          {
+            "id": 23, 
+            "key": "trm-40",
+            "name": "TRM-40",
+            "subname": "Lectura rápida y estable para transformadores muy grandes",
+            "brand": "vanguard",
+            "line": "instrumentos-de-prueba-electricos-vanguard"
+          },
+          {
+            "id": 24, 
+            "key": "trm-403",
+            "name": "TRM-403",
+            "subname": "Medidor de resistencia de devanado trifásico de 40 A con desmagnetización",
+            "brand": "vanguard",
+            "line": "instrumentos-de-prueba-electricos-vanguard"
+          }
+        ]
+      },
+      {
+        "id": 12, 
+        "key": "prueba-de-transformadores-de-corriente-y-voltaje",
+        "name": "Prueba de transformadores de corriente y voltaje",
+        "products": [
+          {
+            "id": 25, 
+            "key": "ezct-2000c",
+            "name": "EZCT-2000C",
+            "subname": "Configuración de la prueba del transformador de corriente",
+            "brand": "vanguard",
+            "line": "instrumentos-de-prueba-electricos-vanguard"
+          }
+        ]
+      }
+    ]
+  }
+]
+
+
+

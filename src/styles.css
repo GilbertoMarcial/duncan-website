@@ -21693,7 +21693,8 @@ fieldset:disabled .btn {
 .page-header {
   padding: 0;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  /* overflow: hidden; */
   display: flex;
   align-items: center;
   background-size: cover;
@@ -27402,12 +27403,12 @@ pre[class*="language-"] {
 
 /* Begin image-fit */
 .image-fit {
-  margin-right: -100px; /* "empuja" los bordes hacia adentro */
+  margin-right: -100px; 
   margin-left: -100px;
-  margin-top: -200px;
+  margin-top: -100px;
   margin-bottom: -200px;
   display: block;
-  max-width: calc(100% + 100px); /* compensa el margen negativo */
+  max-width: calc(100% + 300px);
 }
 /* End image-fit */
 
@@ -27443,6 +27444,26 @@ pre[class*="language-"] {
   100%{transform: rotate(1turn)}
 }
 /* End loader */
+
+/* Begin Listas */
+.custom-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.custom-list li {
+  padding: 5px 0;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.custom-list li span {
+  color: #0070C0;
+  font-weight: bold;
+  margin-right: 10px;
+}
+/* End Listas */
 
 /* End Custom styles */
 

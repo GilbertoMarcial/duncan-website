@@ -1,5 +1,4 @@
 import { registerLocaleData } from "@angular/common";
-import { HttpClient } from "@angular/common/http";
 
 import localEs from '@angular/common/locales/es';
 import { LOCALE_ID, NgModule } from "@angular/core";

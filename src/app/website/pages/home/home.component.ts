@@ -2,10 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 
+import { Title } from '@angular/platform-browser';
+
 // Services
+import { ProductsService } from '../../services/products.service';
 
 // Models
-import { Product } from '../../models/product';
+// import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-home',
@@ -17,19 +20,17 @@ export class HomeComponent implements OnInit {
   @ViewChild('products') productsSection!: ElementRef;
   @ViewChild('contactForm') contactFormSection!: ElementRef;
 
-  products: Product[] = [];
+  products!: any;
 
   constructor(
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute, 
+    private _productsService: ProductsService,
+    private _title: Title
   ) {}
 
   ngOnInit(): void {
-    // Se cargan los tres productos a mostrar en el home
-    this.products = [
-      new Product(1, 'm4100', 'M4100', 'Analizador de aparatos de alto voltaje', 'doble', 'transformadores'),
-      new Product(2, 'm7100', 'M7100', 'Analizador de activos de alto voltaje', 'doble', 'transformadores'),
-      new Product(3, 'f8300', 'F8300', 'Equipo de prueba trifásico', 'doble', 'interruptores')
-    ];
+    this.getProductsHome();
+    this._title.setTitle('Duncan Engineering Company');
   }
 
   ngAfterViewInit(): void {
@@ -65,5 +66,12 @@ export class HomeComponent implements OnInit {
       window.scrollTo({ top: y, behavior: 'smooth' });
       
     }
+  }
+
+  // Función que se conecta al servicio para obtener los productos de Home
+  getProductsHome() {
+    this._productsService.getProductsHome().subscribe(products => {
+      this.products = products;
+    });
   }
 }

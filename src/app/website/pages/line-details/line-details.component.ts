@@ -4,7 +4,12 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
+import { Title } from '@angular/platform-browser';
+
 import { MoreInfoComponent } from '../../shared/more-info/more-info.component';
+
+// Services
+import { LinesService } from '../../services/lines.service';
 
 // Models
 import { Line } from '../../models/line-full';
@@ -24,13 +29,16 @@ export class LineDetailsComponent implements OnInit {
 
   constructor(
     private _route: ActivatedRoute, 
-    private _sanitizer: DomSanitizer
+    private _sanitizer: DomSanitizer, 
+    private _linesService: LinesService,
+    private _title: Title
   ) { }
 
   ngOnInit(): void {
     this._route.params.subscribe(params => {
       this.keyLine = params['line'];
-      this.loadLine(this.keyLine);
+      // this.loadLine(this.keyLine);
+      this.getLineByKey(this.keyLine);
     });
   }
 
@@ -77,6 +85,25 @@ export class LineDetailsComponent implements OnInit {
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
+  }
+
+  // Función que permite regresar a la página anterior
+  goBack() {
+    window.history.back();
+  }
+
+  // Función que se conecta al servicio para obtener los datos de la línea 
+  // (perteneciente a una marca) de acuerdo con su key
+  getLineByKey(key: string) {
+    this._linesService.getLinesByKey(key).subscribe(line => {
+      this.line = line[0];
+      
+      // Sanitizamos el texto en html
+      this.setAboutSafe(this.line.description);
+
+      // Cambiamos el título de la página
+      this._title.setTitle(this.line.name + ' - Duncan Engineering');
+    });
   }
 
 }

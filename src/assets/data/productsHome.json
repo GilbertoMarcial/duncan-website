@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "key": "m4100", 
+    "name": "M4100",
+    "subname": "Analizador de aparatos de alto voltaje", 
+    "brand": "doble",
+    "line": "transformadores"
+  },
+  {
+    "id": "2",
+    "key": "m7100", 
+    "name": "M7100",
+    "subname": "Analizador de activos de alto voltaje", 
+    "brand": "doble",
+    "line": "transformadores"
+  },
+  {
+    "id": "3",
+    "key": "f8300", 
+    "name": "F8300",
+    "subname": "Equipo de prueba trifásico", 
+    "brand": "doble",
+    "line": "interruptores"
+  }
+]

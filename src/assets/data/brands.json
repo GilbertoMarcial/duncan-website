@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "key": "doble",
+    "name": "Doble Engineering",
+    "website": "https://www.doble.com/",
+    "about": "<p class='text-dark-uai'>Fundada en 1920, <span class='font-weight-bold'>Doble Engineering Company</span> asegura una energía confiable, segura y protegida para todos. Lo hace proporcionando diagnósticos completos y experiencia en ingeniería para la industria energética.</p><p class='text-dark-uai'><span class='font-weight-bold'>Doble</span> forma parte del Grupo de Soluciones de Empresas de Servicios Públicos de ESCO Technologies Inc. (NYSE: ESE) y sirve a clientes de todo el mundo.</p>",
+    "bg_color_1": "bg-gradient-blue",
+    "bg_color_2": "",
+    "bg_image": "doble-header3",
+    "lines": [
+      {
+        "id": 1, 
+        "key": "instrumentos-de-prueba-electricos-doble",
+        "name": "Instrumentos de prueba eléctricos",
+        "description": "Software de diagnóstico y analizadores para pruebas de estado de condición y operación de aparatos de subestaciones."
+      }, 
+      {
+        "id": 2, 
+        "key": "pruebas-de-proteccion-doble",
+        "name": "Pruebas de protección",
+        "description": "Realice pruebas, gestione datos y genere informes con el software y los equipos de diagnóstico para pruebas de todos los tipos de esquemas y relés de protección."
+      }
+    ]
+  }, 
+  {
+    "id": 2,
+    "key": "beckwith",
+    "name": "Beckwith Electric",
+    "website": "https://www.hubbell.com/beckwithelectric/en/",
+    "about": "<p class='text-dark-uai'>Empresa líder en soluciones de protección, control y monitorización para sistemas de energía eléctrica. Se especializa en el desarrollo de tecnologías avanzadas para la automatización y gestión de redes eléctricas.</p><p class='text-dark-uai'><span class='font-weight-bold'>Beckwith</span> se ha consolidado como un referente en la industria, brindando soluciones integrales para utilities y empresas de generación, transmisión y distribución de energía en todo el mundo.</p>",
+    "bg_color_1": "bg-gradient-images-04-uai",
+    "bg_color_2": "",
+    "bg_image": "beckwith-header",
+    "lines": [
+      {
+        "id": 3, 
+        "key": "reles-de-proteccion",
+        "name": "Relés de protección",
+        "description": "Los relés de protección sirven para detectar fallas eléctricas y aislar la sección afectada del sistema."
+      }, 
+      {
+        "id": 4, 
+        "key": "industrial",
+        "name": "Industrial",
+        "description": "Los equipos de protección y control industrial sirven para proteger maquinaria, motores y otros dispositivos de fallas eléctricas."
+      }
+    ]
+  }, 
+  {
+    "id": 3,
+    "key": "vanguard",
+    "name": "Vanguard Instruments",
+    "website": "https://www.doble.com/about/vanguard-instruments/",
+    "about": "<p class='text-dark-uai'>Empresa reconocida en el sector de la medición y pruebas eléctricas, especializada en la fabricación de equipos de alta precisión para el análisis de sistemas de energía.</p><p class='text-dark-uai'>Su compromiso con la innovación y la calidad ha posicionado a <span class='font-weight-bold'>Vanguard</span> como un referente en soluciones confiables y avanzadas para el monitoreo y diagnóstico de sistemas eléctricos.</p>",
+    "bg_color_1": "bg-gradient-images-03-uai",
+    "bg_color_2": "",
+    "bg_image": "vanguard-header",
+    "lines": [
+      {
+        "id": 5, 
+        "key": "instrumentos-de-prueba-electricos-vanguard",
+        "name": "Instrumentos de prueba eléctricos",
+        "description": "Evalúe el estado de transformadores, interruptores, máquinas rotativas y dispositivos auxiliares de la subestación."
+      }
+    ]
+  }, 
+  {
+    "id": 4,
+    "key": "pscad",
+    "name": "PSCAD",
+    "website": "https://www.pscad.com/",
+    "bg_color_1": "bg-gradient-images-05-uai"
+  }
+]

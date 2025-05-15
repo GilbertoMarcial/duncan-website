@@ -10,6 +10,7 @@ export class ProductFull {
     public features: string,
     public benefits: string,
     public accesories: string,
-    public related: Array<Product>
+    public related: Array<Product>, 
+    public url: string
   ) {}
 }

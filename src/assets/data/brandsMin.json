@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "key": "doble",
+    "name": "Doble Engineering",
+    "website": "https://www.doble.com/",
+    "bg_color_1": "bg-gradient-blue"
+  }, 
+  {
+    "id": "2",
+    "key": "beckwith",
+    "name": "Beckwith Electric",
+    "website": "https://www.hubbell.com/beckwithelectric/en/",
+    "bg_color_1": "bg-gradient-images-04-uai"
+  }, 
+  {
+    "id": "3",
+    "key": "vanguard",
+    "name": "Vanguard Instruments",
+    "website": "https://www.doble.com/about/vanguard-instruments/",
+    "bg_color_1": "bg-gradient-images-03-uai"
+  }, 
+  {
+    "id": "4",
+    "key": "pscad",
+    "name": "PSCAD",
+    "website": "https://www.pscad.com/",
+    "bg_color_1": "bg-gradient-images-05-uai"
+  }
+]

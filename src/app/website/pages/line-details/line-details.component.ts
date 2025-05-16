@@ -40,8 +40,8 @@ export class LineDetailsComponent implements OnInit {
     this._route.params.subscribe(params => {
       this.keyLine = params['line'];
       // Modificar para conectar a supabase/json
-      // this.getLineByKey(this.keyLine);
-      this.getLineByKeyFromServer(this.keyLine);
+      this.getLineByKey(this.keyLine);
+      // this.getLineByKeyFromServer(this.keyLine);
     });
   }
 
@@ -70,6 +70,7 @@ export class LineDetailsComponent implements OnInit {
   // Función que se conecta al servicio para obtener los datos de la línea 
   // (perteneciente a una marca) de acuerdo con su key desde un archivo json
   getLineByKey(key: string) {
+    console.log('Desde JSON');
     this._linesService.getLinesByKey(key).subscribe(line => {
       this.line = line[0];
       

@@ -19,12 +19,5 @@
     "name": "Vanguard Instruments",
     "website": "https://www.doble.com/about/vanguard-instruments/",
     "bg_color_1": "bg-gradient-images-03-uai"
-  }, 
-  {
-    "id": "4",
-    "key": "pscad",
-    "name": "PSCAD",
-    "website": "https://www.pscad.com/",
-    "bg_color_1": "bg-gradient-images-05-uai"
   }
 ]

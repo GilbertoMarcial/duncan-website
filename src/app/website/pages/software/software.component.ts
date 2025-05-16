@@ -40,8 +40,9 @@ export class SoftwareComponent {
   ngOnInit(): void {
     this._route.params.subscribe(params => {
       this.keySoftware = params['software'];
-      // Obtener software desde el servicio
-      this.getSoftwareByKeyFromServer(this.keySoftware);
+      // Obtener software desde el servicio json/supabase
+      this.getSoftwareByKey(this.keySoftware);
+      // this.getSoftwareByKeyFromServer(this.keySoftware);
     });
   }
 
@@ -49,6 +50,24 @@ export class SoftwareComponent {
   goBack() {
     window.history.back();
   }
+
+  /* ************ Begin Archivo json ************ */
+  getSoftwareByKey(key: string) {
+    console.log('Desde JSON');
+    this._softwareService.getSoftwareByKey(key).subscribe((data: any) => {
+      this.software = data[0];
+
+      // Sanitizamos el texto en html
+      this.subnameSafe = this._sanitizer.bypassSecurityTrustHtml(this.software.subname);
+      this.overviewSafe = this._sanitizer.bypassSecurityTrustHtml(this.software.overview);
+      this.descriptionSafe = this._sanitizer.bypassSecurityTrustHtml(this.software.description);
+      this.featuresSafe = this._sanitizer.bypassSecurityTrustHtml(this.software.features);
+
+      // Cambiamos el título de la página
+      this._title.setTitle(this.software.name + ' - Duncan Engineering');
+    });
+  }
+  /* ************ End Archivo json ************ */
 
   /* ************ Begin Supabase ************ */
   // Función que se conecta al servicio para obtener los datos del software

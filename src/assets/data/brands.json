@@ -64,12 +64,5 @@
         "description": "Evalúe el estado de transformadores, interruptores, máquinas rotativas y dispositivos auxiliares de la subestación."
       }
     ]
-  }, 
-  {
-    "id": 4,
-    "key": "pscad",
-    "name": "PSCAD",
-    "website": "https://www.pscad.com/",
-    "bg_color_1": "bg-gradient-images-05-uai"
   }
 ]

@@ -28,8 +28,8 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.getProductsHome();
-    this.getProductsHomeFromServer();
+    this.getProductsHome();
+    // this.getProductsHomeFromServer();
     this._title.setTitle('Duncan Engineering Company');
   }
 
@@ -72,6 +72,7 @@ export class HomeComponent implements OnInit {
   // Función que se conecta al servicio y obtiene los datos de 3 productos 
   // desde un archivo json
   getProductsHome() {
+    console.log('Desde JSON');
     this._productsService.getProductsHome().subscribe(products => {
       this.products = products;
     });

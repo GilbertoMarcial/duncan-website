@@ -28,9 +28,10 @@ export class BrandsComponent implements OnInit {
 
   ngOnInit(): void {
     // Quitar comentario para conectar a supabase/json
-    // this.getBrands();
-    this.getBrandsFromServer();
-    this.getSoftwareFromServer();
+    this.getBrands();
+    this.getSoftware();
+    // this.getBrandsFromServer();
+    // this.getSoftwareFromServer();
     this._title.setTitle('Productos y servicios - Duncan Engineering Company');
   }
 
@@ -38,8 +39,16 @@ export class BrandsComponent implements OnInit {
   // Función que se conecta al servicio y obtiene los datos de las marcas 
   // desde un archivo json
   getBrands() {
+    console.log('Desde JSON');
     this._brandsService.getBrands().subscribe(brands => {
       this.brands = brands;
+    });
+  }
+  
+  getSoftware() {
+    console.log('Desde JSON');
+    this._softwareService.getSoftware().subscribe(software => {
+      this.software = software;
     });
   }
   /* ************ End Archivo json ************ */

@@ -39,8 +39,8 @@ export class BrandDetailsComponent implements OnInit {
     this._route.params.subscribe(params => {
       this.keyBrand = params['key'];
       // Modificar para conectar a supabase/json
-      // this.getBrandByKey(this.keyBrand);
-      this.getBrandByKeyFromServer(this.keyBrand);
+      this.getBrandByKey(this.keyBrand);
+      // this.getBrandByKeyFromServer(this.keyBrand);
     });
   }
 
@@ -68,6 +68,7 @@ export class BrandDetailsComponent implements OnInit {
   // Función que se conecta al servicio para obtener los datos de la marca 
   // de acuerdo con su key
   getBrandByKey(key: string) {
+    console.log('Desde JSON');
     this._brandsService.getBrandsByKey(key).subscribe(brand => {
       this.brand = brand[0];
 

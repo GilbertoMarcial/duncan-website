@@ -1,6 +1,6 @@
 <!-- Beging Main -->
 <div class="page-header min-vh-75" style="background-image: url('../assets/images/brands/{{ brand.bg_image }}.webp');">
-  <span class="mask bg-gradient-images-02-uai opacity-6"></span>
+  <span class="mask bg-gradient-images-07-uai opacity-7"></span>
   <div class="container">
     <!-- Botón atrás -->
     <div class="row">
@@ -38,7 +38,7 @@
       <div class="col-lg-8 col-12 mx-auto text-center">
         <div>
           <h2 class="text-primary-uai">Acerca de</h2>
-          <div [innerHTML]="brand.about"></div>
+          <div [innerHTML]="aboutSafe"></div>
         </div>
       </div>
     </div>

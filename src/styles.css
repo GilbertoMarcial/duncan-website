@@ -22036,34 +22036,6 @@ label,
   background-image: linear-gradient(0deg, var(--bs-gradient-secondary-left-uai) 0%, var(--bs-gradient-secondary-right-uai) 100%);
 }
 
-.bg-gradient-sections-45-uai {
-  background-image: linear-gradient(45deg, var(--bs-gradient-secondary-left-uai) 0%, var(--bs-gradient-secondary-right-uai) 100%);
-}
-
-.bg-gradient-sections-90-uai {
-  background-image: linear-gradient(90deg, var(--bs-gradient-secondary-left-uai) 0%, var(--bs-gradient-secondary-right-uai) 100%);
-}
-
-.bg-gradient-sections-135-uai {
-  background-image: linear-gradient(135deg, var(--bs-gradient-secondary-left-uai) 0%, var(--bs-gradient-secondary-right-uai) 100%);
-}
-
-.bg-gradient-sections-180-uai {
-  background-image: linear-gradient(180deg, var(--bs-gradient-secondary-left-uai) 0%, var(--bs-gradient-secondary-right-uai) 100%);
-}
-
-.bg-gradient-sections-225-uai {
-  background-image: linear-gradient(225deg, var(--bs-gradient-secondary-left-uai) 0%, var(--bs-gradient-secondary-right-uai) 100%);
-}
-
-.bg-gradient-sections-270-uai {
-  background-image: linear-gradient(270deg, var(--bs-gradient-secondary-left-uai) 0%, var(--bs-gradient-secondary-right-uai) 100%);
-}
-
-.bg-gradient-sections-315-uai {
-  background-image: linear-gradient(315deg, var(--bs-gradient-secondary-left-uai) 0%, var(--bs-gradient-secondary-right-uai) 100%);
-}
-
 .bg-gradient-images-01-uai {
   /* background-image: linear-gradient(180deg, rgba(0, 51, 102, 0.9) 40%, rgba(9, 102, 173, 0.8) 100%); */
   /* background-image: linear-gradient(to right bottom, #003366, #033c73, #054580, #074f8d, #09599b, #2768a8, #3c78b4, #4f88c1, #73a2d0, #97bddf, #bcd7ee, #e3f2fd); */
@@ -22098,6 +22070,30 @@ label,
 .bg-gradient-images-05-uai {
   background: linear-gradient(135deg, rgba(253,29,29,0.65) 50%, rgba(252,176,69,0.65) 100%);
 }
+
+.bg-gradient-images-06-uai {
+  background: #000046;  /* fallback for old browsers */
+  /*background: -webkit-linear-gradient(to bottom, #1CB5E0, #000046);*/  /* Chrome 10-25, Safari 5.1-6 */
+  /*background: linear-gradient(to bottom, #1CB5E0, #000046);*/ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(345deg, #0966ad, #000046);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(345deg, #0966ad, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-gradient-images-07-uai {
+  background: #0575E6;  /* fallback for old browsers */
+  background: linear-gradient(305deg, #021B79, #0966AD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(305deg, #021B79, #0966AD);  /* Chrome 10-25, Safari 5.1-6 */
+}
+
+.bg-gradient-images-08-uai {
+/* background-image: linear-gradient(105deg, rgba(62,147,252,0.57) 12.9%, rgba(239,183,192,0.44) 91.2% ); */
+  background-image: linear-gradient(105deg, rgba(9,102,173,0.57) 12.9%, rgba(239,183,192,0.44) 91.2% );
+}
+
+.bg-gradient-images-09-uai {
+  background-image: linear-gradient(to bottom, #dfe9f3 0%, white 100%);
+}
+
 /* End Background gradients for UAI */
 
 

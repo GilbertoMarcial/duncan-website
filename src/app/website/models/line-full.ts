@@ -1,6 +1,6 @@
 import { Category } from "./category";
 
-export class Line {
+export class LineBrand {
   constructor (
     public id: number, 
     public key: string, 

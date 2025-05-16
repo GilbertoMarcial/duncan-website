@@ -1,6 +1,6 @@
 <!-- Begin Productos -->
 <div class="page-header min-vh-100 py-7">
-  <span class="mask bg-gradient-hero-uai opacity-4"></span>
+  <span class="mask bg-gradient-images-09-uai opacity-4"></span>
   <div class="container">
     <div class="row align-items-center my-5">
       <div class="col-lg-8 mx-auto text-center">
@@ -9,7 +9,12 @@
             Productos y servicios
           </h3>
           <p class="text-dark-uai">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi sint inventore quas eos, tempora culpa. Dignissimos voluptatibus tempora, accusantium voluptas cumque unde laudantium? Tempore impedit rem fugiat numquam quaerat at?
+            Trabajamos con las marcas más reconocidas en ingeniería eléctrica y 
+            sistemas de potencia, para brindar soluciones integrales que optimizan 
+            el rendimiento de infraestructuras críticas. Desde equipos de prueba y 
+            medición hasta software avanzado de simulación, nuestro portafolio 
+            está orientado a profesionales que buscan innovación, precisión y 
+            soporte técnico de excelencia.
           </p>
         </div>
       </div>
@@ -18,8 +23,8 @@
     <div class="row">
       <div class="col-lg-1"></div>
       <div class="col-lg-10">
+        <!-- Brands -->
         <div class="row mb-5">
-          <!-- Brands -->
           <ng-container *ngFor="let brand of brands">
             <div class="col-lg-4 mb-lg-1 me-lg-0 ms-lg-0 ps-1 pe-1">
               <div class="card card-background mb-1">
@@ -42,7 +47,7 @@
           </ng-container>
 
           <!-- Doble -->
-          <div class="col-lg-4 mb-lg-1 me-lg-0 ms-lg-0 ps-1 pe-1" style="display: none;">
+          <!-- <div class="col-lg-4 mb-lg-1 me-lg-0 ms-lg-0 ps-1 pe-1" style="display: none;">
             <div class="card card-background mb-1">
               <span class="mask bg-gradient-blue z-index-2 opacity-6"></span>
               <div class="full-background" style="background-image: url('../assets/images/brands/logo_doble_small.svg');"></div>
@@ -59,10 +64,10 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Beckwith -->
-          <div class="col-lg-4 mb-lg-1 me-lg-0 ms-lg-0 ps-1 pe-1" style="display: none;">
+          <!-- <div class="col-lg-4 mb-lg-1 me-lg-0 ms-lg-0 ps-1 pe-1" style="display: none;">
             <div class="card card-background mb-1">
               <span class="mask bg-gradient-images-04-uai z-index-2 opacity-6"></span>
               <div class="full-background" style="background-image: url('../assets/images/brands/logo_beckwith_small.svg');"></div>
@@ -79,10 +84,10 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Vanguard -->
-          <div class="col-lg-4 mb-lg-1 me-lg-0 ms-lg-0 ps-1 pe-1" style="display: none;">
+          <!-- <div class="col-lg-4 mb-lg-1 me-lg-0 ms-lg-0 ps-1 pe-1" style="display: none;">
             <div class="card card-background mb-1">
               <span class="mask bg-gradient-images-03-uai z-index-2 opacity-6"></span>
               <div class="full-background" style="background-image: url('../assets/images/brands/logo_vanguard_small.svg');"></div>
@@ -99,13 +104,13 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Blank -->
-          <div class="col-lg-4 mb-lg-1 me-lg-0 ms-lg-0 ps-1 pe-1" style="display: none;"></div>
+          <!-- <div class="col-lg-4 mb-lg-1 me-lg-0 ms-lg-0 ps-1 pe-1" style="display: none;"></div> -->
 
           <!-- PSCAD -->
-          <div class="col-lg-4 mb-lg-1 me-lg-0 ms-lg-0 ps-1 pe-1" style="display: none;">
+          <!-- <div class="col-lg-4 mb-lg-1 me-lg-0 ms-lg-0 ps-1 pe-1" style="display: none;">
             <div class="card card-background mb-1">
               <span class="mask bg-gradient-images-05-uai z-index-2 opacity-6"></span>
               <div class="full-background" style="background-image: url('../assets/images/brands/logo_pscad_small.svg');"></div>
@@ -122,8 +127,31 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
+
+        <!-- Software -->
+        <div class="row mb-5">
+          <ng-container *ngFor="let software of software">
+            <div class="col-lg-4 mb-lg-1 me-lg-0 ms-lg-0 ps-1 pe-1">
+              <div class="card card-background mb-1">
+                <span class="mask {{ software.bg_color_1 }} z-index-2 opacity-6"></span>
+                <div class="full-background" style="background-image: url('../assets/images/brands/logo_{{ software.key }}_small.svg');"></div>
+                <div class="card-body py-6 align-items-center">
+                  <h4 class="text-white text-center mt-4">
+                    <strong>{{ software.name }}</strong>
+                  </h4>
+                  <div class="author align-items-center">
+                    <div class="col-md-12 text-center">
+                      <a href="javascript:;" [routerLink]="['../software', software.key]" type="button" class="btn btn-outline-primary btn-sm mt-5 mb-0">
+                        Ver más
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
       </div>
     </div>
   </div>

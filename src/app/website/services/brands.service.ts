@@ -1,41 +1,44 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
-import { environment } from '../../../environments/environment';
+import { SupabaseService } from './supabase.service';
 import { map } from 'rxjs';
 
 // Models
 import { Brand } from '../models/brand';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class BrandsService {
-  private supabase: SupabaseClient;
 
   constructor(
-    private _http: HttpClient
+    private _http: HttpClient, 
+    private _supabaseSevice: SupabaseService
   ) {
-    this.supabase = createClient(environment.supabaseUrl, environment.supabaseKey);
   }
 
-  // Función que permite obtener las marcas que se muestran en Todas las marcas
+  /* ************ Begin Archivo json ************ */
+  // Función que obtiene los datos de las marcas desde un archivo json
   getBrands() {
     return this._http.get('assets/data/brandsMin.json');
   }
 
-  // Función que obtiene los datos de una marca de acuerdo a su key
+  // Función que obtiene los datos de una marca de acuerdo a su key desde un archivo json
   getBrandsByKey(key: string) {
     return this._http.get<any[]>('assets/data/brands.json').pipe(
       map((brands) => brands.filter(b => b.key === key))
     );
   }
+  /* ************ End Archivo json ************ */
 
-  // Función que obtiene los datos de las marcas de la base de datos
-  async getBrandsForServer(): Promise<Brand[]> {
-    const { data, error } = await this.supabase
+  /* ************ Begin Supabase ************ */
+  // Función que obtiene los datos de las marcas de la base de datos desde supabase
+  async getBrandsFromServer(): Promise<Brand[]> {
+    const { data, error } = await this._supabaseSevice.client
       .from('brands')
-      .select('*');
+      .select('*')
+      .order('id', { ascending: true });
 
     if (error) {
       console.error('Error al obtener las marcas:', error);
@@ -46,8 +49,9 @@ export class BrandsService {
   }
 
   // Función que obtiene los datos de una marca de la base de datos a través de su key
-  async getBrandByKey(key: string): Promise<Brand> {
-    const { data, error } = await this.supabase
+  // desde supabase
+  async getBrandByKeyFromServer(key: string): Promise<Brand> {
+    const { data, error } = await this._supabaseSevice.client
       .from('brands')
       .select(`
         *, 
@@ -78,4 +82,5 @@ export class BrandsService {
 
     return brand;
   }
+  /* ************ End Supabase ************ */
 }

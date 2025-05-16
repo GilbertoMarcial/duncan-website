@@ -1,6 +1,7 @@
 <!-- Beging Main two columns -->
 <div class="page-header min-vh-60 my-1">
-  <span class="mask bg-gradient-primary-uai"></span>
+  <!-- <span class="mask bg-gradient-primary-uai"></span> -->
+  <span class="mask bg-gradient-images-07-uai"></span>
   <div class="container">
     <div class="row">
       <div class="col-lg-1"></div>
@@ -42,9 +43,9 @@
       <div class="col-lg-10">
         <div>
           <h3 class="text-primary-uai">
-            Descripción.
+            Descripción
           </h3>
-          <div [innerHTML]="product.description"></div>
+          <div [innerHTML]="aboutSafe"></div>
         </div>
       </div>
     </div>
@@ -53,7 +54,7 @@
 <!-- End Descripción general -->
 
 <!-- Begin Características -->
-<section class="page-header py-3" *ngIf="product.features !== ''">
+<section class="page-header py-3" *ngIf="product?.features">
   <span class="mask bg-gradient-primary-uai opacity-1"></span>
   <div class="container">
     <div class="row my-3">
@@ -63,7 +64,7 @@
           Características clave
         </h3>
 
-        <div [innerHTML]="product.features"></div>
+        <div [innerHTML]="featuresSafe"></div>
       </div>
     </div>
   </div>
@@ -71,7 +72,7 @@
 <!-- End Características -->
 
 <!-- Begin Beneficios -->
-<section class="page-header py-3" *ngIf="product.benefits !== ''">
+<section class="page-header py-3" *ngIf="product?.benefits">
   <div class="container">
     <div class="row my-3">
       <div class="col-lg-1"></div>
@@ -80,7 +81,7 @@
           Beneficios
         </h3>
 
-        <div [innerHTML]="product.benefits"></div>
+        <div [innerHTML]="benefitsSafe"></div>
       </div>
     </div>
   </div>
@@ -88,7 +89,7 @@
 <!-- End Beneficios -->
 
 <!-- Begin Accesorios -->
-<section class="page-header py-3" *ngIf="product.accesories !== ''">
+<section class="page-header py-3" *ngIf="product?.accesories">
   <span class="mask bg-gradient-images-05-uai opacity-2"></span>
   <div class="container">
     <div class="row my-3">
@@ -98,7 +99,7 @@
           Accesorios
         </h3>
 
-        <div [innerHTML]="product.accesories"></div>
+        <div [innerHTML]="accesoriesSafe"></div>
 
       </div>
     </div>
@@ -107,7 +108,7 @@
 <!-- End Accesorios -->
 
 <!-- Begin Productos relacionados -->
-<section class="page-header" *ngIf="product.related.length > 0">
+<section class="page-header" *ngIf="product?.related?.length">
   <div class="container">
     <div class="row my-3">
       <div class="col-lg-1"></div>

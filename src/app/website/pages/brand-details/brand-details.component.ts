@@ -38,9 +38,9 @@ export class BrandDetailsComponent implements OnInit {
   ngOnInit(): void {
     this._route.params.subscribe(params => {
       this.keyBrand = params['key'];
-      this.getBrandByKey(this.keyBrand);
-      // Modificar para conectar a supabase
-      // this.getBrandByKeyForServer(this.keyBrand);
+      // Modificar para conectar a supabase/json
+      // this.getBrandByKey(this.keyBrand);
+      this.getBrandByKeyFromServer(this.keyBrand);
     });
   }
 
@@ -64,7 +64,9 @@ export class BrandDetailsComponent implements OnInit {
     this._router.navigate(['/brands']);
   }
 
-  // Función que se conecta al servicio para obtener los datos de la marca de acuerdo con su key
+  /* ************ Begin Archivo json ************ */
+  // Función que se conecta al servicio para obtener los datos de la marca 
+  // de acuerdo con su key
   getBrandByKey(key: string) {
     this._brandsService.getBrandsByKey(key).subscribe(brand => {
       this.brand = brand[0];
@@ -76,15 +78,23 @@ export class BrandDetailsComponent implements OnInit {
       this._title.setTitle(this.brand.name + ' - Duncan Engineering Company');
     });
   }
+  /* ************ End Archivo json ************ */
 
-  async getBrandByKeyForServer(key: string) {
+  /* ************ Begin Supabase ************ */
+  async getBrandByKeyFromServer(key: string) {
     try {
-      this.brand = await this._brandsService.getBrandByKey(key);
-      console.log(this.brand);
+      this.brand = await this._brandsService.getBrandByKeyFromServer(key);
+
+      // Sanitizamos el texto en html
+      this.setAboutSafe(this.brand.about);
+
+      // Cambiamos el título de la página
+      this._title.setTitle(this.brand.name + ' - Duncan Engineering Company')
     } catch (err: any) {
       console.error('Error al obtener la marca:', err);
     } finally {
       this.loading = false;
     }
   }
+  /* ************ End Supabase ************ */
 }

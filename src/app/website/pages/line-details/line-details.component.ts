@@ -12,7 +12,7 @@ import { MoreInfoComponent } from '../../shared/more-info/more-info.component';
 import { LinesService } from '../../services/lines.service';
 
 // Models
-import { Line } from '../../models/line-full';
+import { LineBrand } from '../../models/line-full';
 import { Category } from '../../models/category';
 import { Product } from '../../models/product';
 
@@ -24,8 +24,10 @@ import { Product } from '../../models/product';
 })
 export class LineDetailsComponent implements OnInit {
   keyLine: string = '';
-  line: Line = new Line(1, '', '', '', []);
+  line: LineBrand = new LineBrand(1, '', '', '', []);
   aboutSafe!: SafeHtml;
+  loading = true;
+  error = '';
 
   constructor(
     private _route: ActivatedRoute, 
@@ -37,38 +39,10 @@ export class LineDetailsComponent implements OnInit {
   ngOnInit(): void {
     this._route.params.subscribe(params => {
       this.keyLine = params['line'];
-      // this.loadLine(this.keyLine);
-      this.getLineByKey(this.keyLine);
+      // Modificar para conectar a supabase/json
+      // this.getLineByKey(this.keyLine);
+      this.getLineByKeyFromServer(this.keyLine);
     });
-  }
-
-  // Cargar datos de la línea a través del servicio
-  loadLine(keyLine: string): Line {
-    // Modificar el siguiente código para obtenerlo desde la BD
-    this.line = new Line(
-      1, 
-      keyLine, 
-      keyLine, 
-      '<p class="text-dark-uai pt-3">Los sólidos equipos de diagnóstico de Doble y su software correspondiente le permiten realizar pruebas de rutina y especializadas en sus activos críticos. En realidad, las “Pruebas Doble” son el estándar de la industria. Clientes en todo el mundo usan los equipos serie <span class="font-weight-bold">M</span>, <span class="font-weight-bold">TDR</span>, <span class="font-weight-bold">SFRA</span> y <span class="font-weight-bold">Vanguard</span> para realizar pruebas de puesta en servicio, diagnóstico y mantenimiento programado. Estos analizadores de activos son la piedra angular de un riguroso programa de mantenimiento basado en las condiciones.</p>', 
-      [
-        new Category(1, 'interruptores', 'Prueba de interruptores', 
-          [
-            new Product(1, 'f8300', 'F8300', 'Equipo de prueba trifásico', 'doble', 'interruptores')
-          ]
-        ), 
-        new Category(2, 'transformadores', 'Prueba de transformadores de potencia', 
-          [
-            new Product(2, 'm7100', 'M7100', 'Analizador de activos de alto voltaje', 'doble', 'transformadores'),
-            new Product(3, 'm4100', 'M4100', 'Probador de aparatos de alto voltaje', 'doble', 'transformadores'),
-            new Product(4, 'dta', 'Software DTA', 'Software Doble Test Assistant', 'doble', 'transformadores')
-          ]
-        )
-      ]
-    );
-
-    // Sanitizamos el texto en html
-    this.setAboutSafe(this.line.description);
-    return this.line;
   }
 
   // Función que limpia el texto en html
@@ -92,8 +66,9 @@ export class LineDetailsComponent implements OnInit {
     window.history.back();
   }
 
+  /* ************ Begin Archivo json ************ */
   // Función que se conecta al servicio para obtener los datos de la línea 
-  // (perteneciente a una marca) de acuerdo con su key
+  // (perteneciente a una marca) de acuerdo con su key desde un archivo json
   getLineByKey(key: string) {
     this._linesService.getLinesByKey(key).subscribe(line => {
       this.line = line[0];
@@ -105,5 +80,26 @@ export class LineDetailsComponent implements OnInit {
       this._title.setTitle(this.line.name + ' - Duncan Engineering');
     });
   }
+  /* ************ End Archivo json ************ */
 
+  /* ************ Begin Supabase ************ */
+  // Función que se conecta al servicio para obtener los datos de la línea 
+  // (perteneciente a una marca) de acuerdo con su key desde supabase
+  async getLineByKeyFromServer(key: string) {
+    try {
+      this.line = await this._linesService.getLinesByKeyFromServer(key);
+
+      // Sanitizamos el texto en html
+      this.setAboutSafe(this.line.description);
+
+      // Cambiamos el título de la página
+      this._title.setTitle(this.line.name + ' - Duncan Engineering');
+
+    } catch (err: any) {
+      console.error('Error al obtener la línea: ', err);
+    } finally {
+      this.loading = false;
+    }
+  }
+  /* ************ End Supabase ************ */
 }

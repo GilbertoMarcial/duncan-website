@@ -7,9 +7,6 @@ import { Title } from '@angular/platform-browser';
 // Services
 import { ProductsService } from '../../services/products.service';
 
-// Models
-// import { Product } from '../../models/product';
-
 @Component({
   selector: 'app-home',
   imports: [CommonModule, RouterModule],
@@ -21,6 +18,8 @@ export class HomeComponent implements OnInit {
   @ViewChild('contactForm') contactFormSection!: ElementRef;
 
   products!: any;
+  loading = true;
+  error = '';
 
   constructor(
     private _route: ActivatedRoute, 
@@ -29,7 +28,8 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getProductsHome();
+    // this.getProductsHome();
+    this.getProductsHomeFromServer();
     this._title.setTitle('Duncan Engineering Company');
   }
 
@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
       if (fragment) {
         setTimeout(() => {
           this.scrollToContact();
-        }, 100); // espera a que se renderice el DOM
+        }, 100); // esperamos a que se renderice el DOM
       }
     });
   }
@@ -68,10 +68,26 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  // Función que se conecta al servicio para obtener los productos de Home
+  /* ************ Archivo json ************ */
+  // Función que se conecta al servicio y obtiene los datos de 3 productos 
+  // desde un archivo json
   getProductsHome() {
     this._productsService.getProductsHome().subscribe(products => {
       this.products = products;
     });
+  }
+
+  /* ************ Supabase ************ */
+  // Función que se conecta al servicio y obtiene los datos de 3 productos 
+  // desde supabase
+  async getProductsHomeFromServer() {
+    try {
+      this.products = await this._productsService.getProductsHomeFromServer();
+      console.log(this.products);
+    } catch (err: any) {
+      console.error('Error al obtener los productos:', err);
+    } finally {
+      this.loading = false;
+    }
   }
 }

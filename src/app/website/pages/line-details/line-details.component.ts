@@ -40,8 +40,8 @@ export class LineDetailsComponent implements OnInit {
     this._route.params.subscribe(params => {
       this.keyLine = params['line'];
       // Modificar para conectar a supabase/json
-      this.getLineByKey(this.keyLine);
-      // this.getLineByKeyFromServer(this.keyLine);
+      // this.getLineByKey(this.keyLine);
+      this.getLineByKeyFromServer(this.keyLine);
     });
 
   }

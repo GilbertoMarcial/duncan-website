@@ -42,8 +42,8 @@ export class ProductsComponent implements OnInit {
     this._route.params.subscribe(params => {
       this.keyProduct = params['product'];
       // Modificar para conectar a supabase/json
-      this.getProductByKey(this.keyProduct);
-      // this.getProductByKeyFromServer(this.keyProduct);
+      // this.getProductByKey(this.keyProduct);
+      this.getProductByKeyFromServer(this.keyProduct);
     });
   }
 

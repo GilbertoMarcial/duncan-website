@@ -12,9 +12,9 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes),
     provideHttpClient(),
     // duncan.mx
-    // { provide: RECAPTCHA_V3_SITE_KEY, useValue: '6Ld1qz0rAAAAAInNcbGIwDDPF5B3iMMsU5rI4mpq' },
+    { provide: RECAPTCHA_V3_SITE_KEY, useValue: '6Ld1qz0rAAAAAInNcbGIwDDPF5B3iMMsU5rI4mpq' },
     // localhost
-    { provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LdvsT0rAAAAAFQNnU34_7KCESKeOUavPuTHjlUa' },
+    // { provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LdvsT0rAAAAAFQNnU34_7KCESKeOUavPuTHjlUa' },
     { provide: LOCALE_ID, useValue: 'es-MXN' }
   ]
 }).catch(err => console.error(err));

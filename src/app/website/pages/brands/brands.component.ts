@@ -28,10 +28,10 @@ export class BrandsComponent implements OnInit {
 
   ngOnInit(): void {
     // Quitar comentario para conectar a supabase/json
-    this.getBrands();
-    this.getSoftware();
-    // this.getBrandsFromServer();
-    // this.getSoftwareFromServer();
+    // this.getBrands();
+    // this.getSoftware();
+    this.getBrandsFromServer();
+    this.getSoftwareFromServer();
     this._title.setTitle('Productos y servicios - Duncan Engineering Company');
   }
 
@@ -59,7 +59,6 @@ export class BrandsComponent implements OnInit {
   async getBrandsFromServer() {
     try {
       this.brands = await this._brandsService.getBrandsFromServer();
-      console.log(this.brands);
     } catch (err: any) {
       console.error('Error al obtener las marcas:', err);
     } finally {
@@ -72,7 +71,6 @@ export class BrandsComponent implements OnInit {
   async getSoftwareFromServer() {
     try {
       this.software = await this._softwareService.getSoftwareFromServer();
-      console.log(this.software);
     } catch (err: any) {
       console.error('Error al obtener los softwares:', err);
     } finally {

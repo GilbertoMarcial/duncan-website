@@ -39,8 +39,8 @@ export class BrandDetailsComponent implements OnInit {
     this._route.params.subscribe(params => {
       this.keyBrand = params['key'];
       // Modificar para conectar a supabase/json
-      this.getBrandByKey(this.keyBrand);
-      // this.getBrandByKeyFromServer(this.keyBrand);
+      // this.getBrandByKey(this.keyBrand);
+      this.getBrandByKeyFromServer(this.keyBrand);
     });
   }
 

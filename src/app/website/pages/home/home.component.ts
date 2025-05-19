@@ -45,8 +45,9 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getProductsHome();
-    // this.getProductsHomeFromServer();
+    // Quitar comentario para conectar a supabase/json
+    // this.getProductsHome();
+    this.getProductsHomeFromServer();
     this._title.setTitle('Duncan Engineering Company');
   }
 
@@ -151,7 +152,6 @@ export class HomeComponent implements OnInit {
   async getProductsHomeFromServer() {
     try {
       this.products = await this._productsService.getProductsHomeFromServer();
-      console.log(this.products);
     } catch (err: any) {
       console.error('Error al obtener los productos:', err);
     } finally {

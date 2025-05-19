@@ -41,8 +41,8 @@ export class SoftwareComponent {
     this._route.params.subscribe(params => {
       this.keySoftware = params['software'];
       // Obtener software desde el servicio json/supabase
-      this.getSoftwareByKey(this.keySoftware);
-      // this.getSoftwareByKeyFromServer(this.keySoftware);
+      // this.getSoftwareByKey(this.keySoftware);
+      this.getSoftwareByKeyFromServer(this.keySoftware);
     });
   }
 

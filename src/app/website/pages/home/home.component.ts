@@ -1,15 +1,24 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 
 import { Title } from '@angular/platform-browser';
+
+import emailjs from 'emailjs-com';
+
+import { environment } from '../../../../environments/environment';
+
+import { RecaptchaV3Module, ReCaptchaV3Service } from 'ng-recaptcha';
+
+import Swal from 'sweetalert2';
 
 // Services
 import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule, RecaptchaV3Module],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -21,10 +30,18 @@ export class HomeComponent implements OnInit {
   loading = true;
   error = '';
 
+  form = {
+    name: '',
+    phone: '',
+    email: '',
+    message: ''
+  }
+
   constructor(
     private _route: ActivatedRoute, 
     private _productsService: ProductsService,
-    private _title: Title
+    private _title: Title, 
+    private _reCaptchaV3Service: ReCaptchaV3Service
   ) {}
 
   ngOnInit(): void {
@@ -66,6 +83,56 @@ export class HomeComponent implements OnInit {
       window.scrollTo({ top: y, behavior: 'smooth' });
       
     }
+  }
+
+  // Función que envía el correo a través del formulario
+  sendEmail() {
+    this._reCaptchaV3Service.execute('formularioContacto').subscribe({
+      next: (token: string) => {
+        const formData = {
+          ...this.form,
+          'g-recaptcha-response': token
+        };
+
+        // Si todo OK
+        // https://dashboard.emailjs.com/
+        // Revisar credenciales de duncan
+        const serviceID = environment.emailjsServiceId;
+        const templateId = environment.emailjsTemplateId;
+        const publicKey = environment.emailjsPublicKey;
+
+        emailjs.send(serviceID, templateId, this.form, publicKey)
+          .then((response) => {
+            Swal.fire({
+              icon: 'success',
+              title: 'Correo enviado correctamente',
+              showConfirmButton: false,
+              timer: 1500
+            });
+            this.form = { name: '', phone: '', email: '', message: '' };
+          })
+          .catch((error) => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Error al enviar el correo',
+              showConfirmButton: false,
+              timer: 1500
+            });
+          });
+
+
+      }, 
+      error: (err) => {
+        console.log('Error con reCaptcha: ', err);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error de verificación reCAPTCHA',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    });
+
   }
 
   /* ************ Archivo json ************ */

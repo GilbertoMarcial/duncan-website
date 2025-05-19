@@ -12,6 +12,7 @@ export class SupabaseService {
   private supabase: SupabaseClient;
 
   constructor() {
+    console.log('[SupabaseService] Instanciado');
     this.supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
   }
 

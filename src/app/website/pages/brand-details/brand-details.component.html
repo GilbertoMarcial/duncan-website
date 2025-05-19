@@ -3,7 +3,7 @@
   <span class="mask bg-gradient-images-07-uai opacity-7"></span>
   <div class="container">
     <!-- Botón atrás -->
-    <div class="row">
+    <div class="row row-brands">
       <div class="col-lg-1"></div>
       <div class="col-lg-10">
         <a href="javascript:;" (click)="goBack()" class="text-white text-sm hover-underline">
@@ -58,7 +58,7 @@
           <div class="container-card">
             <ng-container *ngFor="let line of brand.lines; let i = index;">
               <div class="card-v2">
-                <div class="card-image-v2" style="background-image: url('../assets/images/lines/{{ line.key }}.webp');" *ngIf="i % 2 === 0"></div>
+                <div class="card-image-v2 d-none d-md-block" style="background-image: url('../assets/images/lines/{{ line.key }}.webp');" *ngIf="i % 2 === 0"></div>
                 <div class="card-content-v2">
                   <div class="px-5 py-5">
                     <h2 class="text-secondary-uai">{{ line.name }}</h2>
@@ -68,7 +68,7 @@
                     </a>
                   </div>
                 </div>
-                <div class="card-image-v2" style="background-image: url('../assets/images/lines/{{ line.key }}.webp');" *ngIf="i % 2 !== 0"></div>
+                <div class="card-image-v2 d-none d-md-block" style="background-image: url('../assets/images/lines/{{ line.key }}.webp');" *ngIf="i % 2 !== 0"></div>
               </div>
             </ng-container>
 

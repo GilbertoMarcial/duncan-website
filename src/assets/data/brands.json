@@ -13,13 +13,13 @@
         "id": 1, 
         "key": "instrumentos-de-prueba-electricos-doble",
         "name": "Instrumentos de prueba eléctricos",
-        "description": "Software de diagnóstico y analizadores para pruebas de estado de condición y operación de aparatos de subestaciones."
+        "short_description": "Software de diagnóstico y analizadores para pruebas de estado de condición y operación de aparatos de subestaciones."
       }, 
       {
         "id": 2, 
         "key": "pruebas-de-proteccion-doble",
         "name": "Pruebas de protección",
-        "description": "Realice pruebas, gestione datos y genere informes con el software y los equipos de diagnóstico para pruebas de todos los tipos de esquemas y relés de protección."
+        "short_description": "Realice pruebas, gestione datos y genere informes con el software y los equipos de diagnóstico para pruebas de todos los tipos de esquemas y relés de protección."
       }
     ]
   }, 
@@ -37,13 +37,13 @@
         "id": 3, 
         "key": "reles-de-proteccion",
         "name": "Relés de protección",
-        "description": "Los relés de protección sirven para detectar fallas eléctricas y aislar la sección afectada del sistema."
+        "short_description": "Los relés de protección sirven para detectar fallas eléctricas y aislar la sección afectada del sistema."
       }, 
       {
         "id": 4, 
         "key": "industrial",
         "name": "Industrial",
-        "description": "Los equipos de protección y control industrial sirven para proteger maquinaria, motores y otros dispositivos de fallas eléctricas."
+        "short_description": "Los equipos de protección y control industrial sirven para proteger maquinaria, motores y otros dispositivos de fallas eléctricas."
       }
     ]
   }, 
@@ -61,7 +61,7 @@
         "id": 5, 
         "key": "instrumentos-de-prueba-electricos-vanguard",
         "name": "Instrumentos de prueba eléctricos",
-        "description": "Evalúe el estado de transformadores, interruptores, máquinas rotativas y dispositivos auxiliares de la subestación."
+        "short_description": "Evalúe el estado de transformadores, interruptores, máquinas rotativas y dispositivos auxiliares de la subestación."
       }
     ]
   }

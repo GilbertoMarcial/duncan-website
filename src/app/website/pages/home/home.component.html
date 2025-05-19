@@ -43,22 +43,22 @@
     <!-- Tira de marcas -->
     <div class="row">
       <div class="col-lg-2"></div>
-      <div class="col-lg-2 col-md-2 col-sm-2">
+      <div class="col-lg-2 col-md-2 col-sm-2 mt-5">
         <a href="https://www.hubbell.com/beckwithelectric/en/" target="_blank">
           <img class="w-100 opacity-10" src="assets/images/brands/logo_beckwith_small.svg" alt="Beckwith" width="64" height="64">
         </a>
       </div>
-      <div class="col-lg-2 col-md-2 col-sm-2">
+      <div class="col-lg-2 col-md-2 col-sm-2 mt-5">
         <a href="https://www.doble.com/" target="_blank">
           <img class="w-100 opacity-10" src="assets/images/brands/logo_doble_small.svg" alt="Doble" width="64" height="64">
         </a>
       </div>
-      <div class="col-lg-2 col-md-2 col-sm-2">
+      <div class="col-lg-2 col-md-2 col-sm-2 mt-5">
         <a href="https://www.pscad.com/" target="_blank">
         <img class="w-100 opacity-10" src="assets/images/brands/logo_pscad_small.svg" alt="PSCAD" width="64" height="64">
       </a>
     </div>
-      <div class="col-lg-2 col-md-2 col-sm-2">
+      <div class="col-lg-2 col-md-2 col-sm-2 mt-5">
         <a href="https://www.doble.com/about/vanguard-instruments/" target="_blank">
           <img class="w-100 opacity-10" src="assets/images/brands/logo_vanguard_small.svg" alt="Vanguard" width="64" height="64">
         </a>
@@ -234,27 +234,27 @@
           <div class="col-lg-7 mt-2">
             <div class="card mb-lg-5">
               <div class="card-body">
-                <form id="contact-form" method="post" autocomplete="off">
+                <form id="contact-form" autocomplete="off" (ngSubmit)="sendEmail()" #contactForm="ngForm">
                   
                     <div class="row">
                       <div class="col-md-12">
                         <label>Nombre completo</label>
                         <div class="input-group mb-4">
-                          <input class="form-control" placeholder="Ingrese su nombre" aria-label="Full Name" type="text">
+                          <input class="form-control" placeholder="Ingrese su nombre" aria-label="Full Name" type="text" [(ngModel)]="form.name" [ngModelOptions]="{standalone: true}">
                         </div>
                       </div>
 
                       <div class="col-md-12">
                         <label>Teléfono</label>
                         <div class="input-group mb-4">
-                          <input class="form-control" placeholder="Ingrese su teléfono" aria-label="Full Name" type="text">
+                          <input class="form-control" placeholder="Ingrese su teléfono" aria-label="Full Name" type="text" [(ngModel)]="form.phone" [ngModelOptions]="{standalone: true}">
                         </div>
                       </div>
 
                       <div class="col-md-12">
                         <label>Correo</label>
                         <div class="input-group">
-                          <input type="email" class="form-control" placeholder="Ingrese su correo">
+                          <input type="email" class="form-control" placeholder="Ingrese su correo" [(ngModel)]="form.email" [ngModelOptions]="{standalone: true}">
                         </div>
                       </div>
 
@@ -262,7 +262,7 @@
 
                     <div class="form-group mb-4 mt-md-0 mt-4">
                       <label>Mensaje</label>
-                      <textarea name="message" class="form-control" id="message" rows="6" placeholder="Escriba aquí su mensaje"></textarea>
+                      <textarea name="message" class="form-control" id="message" rows="6" placeholder="Escriba aquí su mensaje" [(ngModel)]="form.message" [ngModelOptions]="{standalone: true}"></textarea>
                     </div>
 
                     <div class="row">

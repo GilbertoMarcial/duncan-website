@@ -44,6 +44,31 @@ export class BrandDetailsComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit(): void {
+    // Cambiar tamaño header dependiendo del ancho de la pantalla
+    const header = document.querySelector('.page-header');
+    if (window.innerWidth < 768 && header) {
+      header.classList.remove('min-vh-75');
+      header.classList.add('min-vh-50');
+    }
+
+    if (window.innerWidth >= 768 && header) {
+      header.classList.remove('min-vh-50');
+      header.classList.add('min-vh-75');
+    }
+
+    const row_brands = document.querySelector('.row-brands');
+    if (window.innerWidth < 768 && row_brands) {
+      row_brands.classList.remove('mt-0');
+      row_brands.classList.add('mt-6');
+    }
+
+    if (window.innerWidth >= 768 && row_brands) {
+      row_brands.classList.remove('mt-6');
+      row_brands.classList.add('mt-0');
+    }
+  }
+
   // Función que limpia el texto en html
   setAboutSafe(html: string) {
     this.aboutSafe = this._sanitizer.bypassSecurityTrustHtml(html);

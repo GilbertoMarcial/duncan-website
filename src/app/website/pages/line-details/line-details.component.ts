@@ -43,6 +43,32 @@ export class LineDetailsComponent implements OnInit {
       this.getLineByKey(this.keyLine);
       // this.getLineByKeyFromServer(this.keyLine);
     });
+
+  }
+
+  ngAfterViewInit(): void {
+    // Cambiar tamaño header dependiendo del ancho de la pantalla
+    const header = document.querySelector('.page-header');
+    if (window.innerWidth < 768 && header) {
+      header.classList.remove('min-vh-65');
+      header.classList.add('min-vh-50');
+    }
+
+    if (window.innerWidth >= 768 && header) {
+      header.classList.remove('min-vh-50');
+      header.classList.add('min-vh-65');
+    }
+
+    const row_line = document.querySelector('.row-lines');
+    if (window.innerWidth < 768 && row_line) {
+      row_line.classList.remove('mt-0');
+      row_line.classList.add('mt-6');
+    }
+
+    if (window.innerWidth >= 768 && row_line) {
+      row_line.classList.remove('mt-6');
+      row_line.classList.add('mt-0');
+    }
   }
 
   // Función que limpia el texto en html

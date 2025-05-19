@@ -47,6 +47,31 @@ export class ProductsComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit(): void {
+    // Cambiar margin top dependiendo del ancho de la pantalla
+    const header = document.querySelector('.row-products');
+    if (window.innerWidth < 768 && header) {
+      header.classList.remove('pt-0');
+      header.classList.add('pt-6');
+    }
+
+    if (window.innerWidth >= 768 && header) {
+      header.classList.remove('pt-6');
+      header.classList.add('pt-0');
+    }
+
+    const row_description = document.querySelector('.row-description');
+    if (window.innerWidth < 768 && row_description) {
+      row_description.classList.remove('my-3');
+      row_description.classList.add('my-5');
+    }
+
+    if (window.innerWidth >= 768 && row_description) {
+      row_description.classList.remove('my-5');
+      row_description.classList.add('my-3');
+    }
+  }
+
   // Función que permite regresar a la página anterior
   goBack() {
     window.history.back();

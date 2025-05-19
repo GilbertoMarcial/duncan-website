@@ -21694,6 +21694,7 @@ fieldset:disabled .btn {
   padding: 0;
   position: relative;
   overflow: visible;
+  align-items: center;
   /* overflow: hidden; */
   display: flex;
   align-items: center;
@@ -27405,6 +27406,12 @@ pre[class*="language-"] {
   margin-bottom: -200px;
   display: block;
   max-width: calc(100% + 300px);
+}
+
+@media (max-width: 768px) {
+  .image-fit {
+    max-width: 100%; /* Para pantallas pequeñas */
+  }
 }
 /* End image-fit */
 

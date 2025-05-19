@@ -3,6 +3,7 @@ import { registerLocaleData } from "@angular/common";
 import localEs from '@angular/common/locales/es';
 import { LOCALE_ID, NgModule } from "@angular/core";
 
+import { AppComponent } from "./app.component";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { APP_ROUTES, routes } from "./app.routes";
@@ -12,10 +13,13 @@ import { RouterModule } from "@angular/router";
 registerLocaleData(localEs, 'es');
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    // AppComponent
+  ],
   imports: [
     BrowserModule, 
-    FormsModule, 
+    FormsModule,
+    AppComponent,
 
     RouterModule.forRoot(routes, {
       anchorScrolling: 'enabled',
@@ -25,7 +29,10 @@ registerLocaleData(localEs, 'es');
     APP_ROUTES, 
     
     WebsiteModule
-  ],  providers: [{ provide: LOCALE_ID, useValue: 'es-MXN' }],
+  ],  
+  providers: [
+    { provide: LOCALE_ID, useValue: 'es-MXN',}
+  ],
   bootstrap: [],
 })
 

@@ -719,18 +719,45 @@ progress {
 }
 
 /* Banner */
+/* --- Enlace del Banner --- */
+.banner-link {
+  display: block;
+  text-decoration: none;
+}
+
+/* --- Banner (Mobile-First) --- */
 .responsive-banner {
+  /* Imagen para móvil */
   background-image: url('assets/images/doble_banner_580x150.jpg');
-  padding-top: 25.86%; 
+  
+  /* Proporción de aspecto (150 / 580) */
+  padding-top: 25.86%;
   height: 0;
+  
+  /* Ajustes generales */
   width: 100%;
   background-size: cover;
   background-position: center;
+  background-color: rgb(13, 87, 152);
 }
+
+/* --- Media Query para Pantallas Grandes (Desktop) --- */
 @media (min-width: 768px) {
   .responsive-banner {
+    /* Imagen para desktop */
     background-image: url('assets/images/doble_banner_1200x627.jpg');
+
+    /* Proporción de aspecto (627 / 1200) */
     padding-top: 52.25%;
+    
+    /* Limita el ancho y centra el banner */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Asegura que la imagen completa sea visible */
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 

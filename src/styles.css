@@ -718,6 +718,22 @@ progress {
   height: auto;
 }
 
+/* Banner */
+.responsive-banner {
+  background-image: url('assets/images/doble_banner_580x150.jpg');
+  padding-top: 25.86%; 
+  height: 0;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width: 768px) {
+  .responsive-banner {
+    background-image: url('assets/images/doble_banner_1200x627.jpg');
+    padding-top: 52.25%;
+  }
+}
+
 .figure {
   display: inline-block;
 }
